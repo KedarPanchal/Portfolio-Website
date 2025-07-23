@@ -1,0 +1,7 @@
+Kedar Panchal created ls++, an enhanced "ls" command-line tool that lists files in a tree format. He developed it using Java, Maven, and GraalVM.
+Kedar Panchal programmed the VST3 instrument Whiplash as a project, which is a cross-platform synthesizer with 10 audio effects.
+Kedar Panchal programmed the command-line tool Text2Phone using Java and Maven as a project, which allows sending files from a computer to a phone using SMS/MMS gateways.
+Kedar Panchal programmed the cross-platform command-line app qwiki in Rust as a project. The app allows for quick access to Wikipedia articles.
+Kedar Panchal developed an AI inpainting plug-in for GIMP, integrating Stable Diffusion XL to enhance image editing with local generative AI. The plug-in was programmed in Python using the Huggingface Transformers library.
+Kedar Panchal worked on fine-tuning EfficientNet-B1 for breast cancer classification, improving tumor detection accuracy and speed. The project used PyTorch and scikit-learn in a Jupyter Notebook for data preprocessing and model training.
+Kedar Panchal programmed a fine-tuned FLAN-T5-Small transformer model for text summarization using Low Rank Adaptation (LoRA), training it on research paper abstracts and summaries with the Hugging Face Transformers library.

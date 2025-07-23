@@ -1,0 +1,4 @@
+In 2024, Kedar Panchal earned the Machine Learning Specialization certification from Stanford University and DeepLearning.AI. The program covered supervised learning, neural network architecture, recommender systems, and reinforcement learning. He developed models using scikit-learn and neural networks with TensorFlow, Keras, and PyTorch.
+In 2024, Kedar Panchal earned the PCEP-Certified Entry-Level Python Programmer certification from the Python Institute. This certification demonstrates knowledge of Python basics, including syntax, data types, control flow, functions, exceptions, I/O operations, and programming logic.
+In 2023, Kedar Panchal earned the IT Specialist: Java certification from Certiport, validating his foundational Java programming skills.
+In 2023, Kedar Panchal earned the Microsoft Office Specialist certification from Certiport, demonstrating proficiency in Excel, PowerPoint, and Word.
