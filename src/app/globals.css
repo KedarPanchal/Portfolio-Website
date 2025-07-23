@@ -11,6 +11,9 @@ body {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  
   color: var(--foreground);
   background: var(--background);
   font-family: var(--font-geist-sans), sans-serif;

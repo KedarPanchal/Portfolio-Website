@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Link from "next/link";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -22,11 +23,11 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <div className="toolbar">
-          <h1><a href="/">Kedar Panchal</a></h1>
-          <h2><a>About</a></h2>
-          <h2><a>Experience</a></h2>
-          <h2><a>Projects</a></h2>
-          <h2><a>Certifications</a></h2>
+          <h1><Link href="/">Kedar Panchal</Link></h1>
+          <h2><Link href="/">About</Link></h2>
+          <h2><Link href="/">Experience</Link></h2>
+          <h2><Link href="/">Projects</Link></h2>
+          <h2><Link href="/">Certifications</Link></h2>
         </div>
         {children}
       </body>
