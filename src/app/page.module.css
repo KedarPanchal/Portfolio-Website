@@ -51,8 +51,8 @@
 .chatbotInputText::-webkit-search-cancel-button {
     appearance: none;
     -webkit-appearance: none;
-    height: 16px;
-    width: 16px;
+    height: 12px;
+    width: 12px;
     background-size: contain;
     background-image: url("./images/x.png");
     cursor: pointer;

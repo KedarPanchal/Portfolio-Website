@@ -26,7 +26,7 @@ async function getEmbeddings(documents: Array<string>) {
     return embeddings;
 }
 
-const loader = new DirectoryLoader("src/context", {
+const loader = new DirectoryLoader("src/app/context", {
     ".txt": (path) => new TextLoader(path)
 });
 const splitter = new RecursiveCharacterTextSplitter({
@@ -79,4 +79,3 @@ export async function query(prompt: FormData) {
     const answer = await chain.invoke(prompt.get("question") as string);
     console.log(answer);
   }
-  
