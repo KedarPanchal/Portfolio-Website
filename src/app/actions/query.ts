@@ -10,6 +10,8 @@ import { RunnablePassthrough, RunnableSequence } from "@langchain/core/runnables
 import type { Document } from "@langchain/core/documents";
 import { StringOutputParser } from "@langchain/core/output_parsers";
 
+import { existsSync } from "node:fs";
+
 // Code to set up export
 async function getEmbeddings(documents: Array<string>) {
     const embedder = await pipeline("feature-extraction", "Xenova/all-MiniLM-L6-v2");
@@ -26,12 +28,19 @@ async function getEmbeddings(documents: Array<string>) {
     return embeddings;
 }
 
-const loader = new DirectoryLoader("src/app/context", {
+let contextPath = "app/context";
+if (existsSync("src/app/context")) {
+    contextPath = "src/app/context";
+}
+
+const loader = new DirectoryLoader(contextPath, {
     ".txt": (path) => new TextLoader(path)
 });
+
 const splitter = new RecursiveCharacterTextSplitter({
     chunkSize: 1024, chunkOverlap: 128
 });
+
 const documents = await loader.load();
 const splits = await splitter.splitDocuments(documents);
 
