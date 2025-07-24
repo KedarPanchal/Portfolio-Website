@@ -79,3 +79,4 @@ export async function query(prompt: FormData) {
     const answer = await chain.invoke(prompt.get("question") as string);
     console.log(answer);
   }
+  

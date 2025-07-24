@@ -7,9 +7,9 @@ env.allowLocalModels = true;
 
 async function ChatbotInput() {
   return (
-    <form action={query}>
-      <input name="question"></input>
-      <button type="submit">🔎</button>
+    <form action={query} className={styles.chatbotInputForm}>
+      <input name="question" type="search" autoComplete="off" className={styles.chatbotInputText}></input>
+      <button type="submit" className={styles.chatbotInputButton}>{">"}</button>
     </form>
   );
 } 
