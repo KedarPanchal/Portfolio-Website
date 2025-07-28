@@ -28,7 +28,7 @@ async function getEmbeddings(documents: Array<string>) {
     return embeddings;
 }
 
-let contextPath = path.join(process.cwd(), "context");
+const contextPath = path.join(process.cwd(), "context");
 
 const loader = new DirectoryLoader(contextPath, {
     ".txt": (path) => new TextLoader(path)
