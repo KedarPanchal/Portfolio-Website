@@ -10,7 +10,7 @@ import { RunnablePassthrough, RunnableSequence } from "@langchain/core/runnables
 import type { Document } from "@langchain/core/documents";
 import { StringOutputParser } from "@langchain/core/output_parsers";
 
-import { existsSync } from "node:fs";
+import path from "path";
 
 // Code to set up export
 async function getEmbeddings(documents: Array<string>) {
@@ -28,10 +28,7 @@ async function getEmbeddings(documents: Array<string>) {
     return embeddings;
 }
 
-let contextPath = "app/context";
-if (existsSync("src/app/context")) {
-    contextPath = "src/app/context";
-}
+let contextPath = path.join(process.cwd(), "context");
 
 const loader = new DirectoryLoader(contextPath, {
     ".txt": (path) => new TextLoader(path)
