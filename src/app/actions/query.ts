@@ -1,4 +1,5 @@
 import { DirectoryLoader } from "langchain/document_loaders/fs/directory";
+import path from "path";
 import { TextLoader } from "langchain/document_loaders/fs/text";
 import { RecursiveCharacterTextSplitter } from "@langchain/textsplitters";
 import { MemoryVectorStore } from "langchain/vectorstores/memory";
@@ -9,8 +10,8 @@ import { pipeline } from "@xenova/transformers";
 import { RunnablePassthrough, RunnableSequence } from "@langchain/core/runnables";
 import type { Document } from "@langchain/core/documents";
 import { StringOutputParser } from "@langchain/core/output_parsers";
+import { ConsoleCallbackHandler } from "@langchain/core/tracers/console";
 
-import path from "path";
 
 // Code to set up export
 async function getEmbeddings(documents: Array<string>) {
@@ -80,7 +81,9 @@ export async function query(prompt: FormData) {
       rag_prompt,
       model,
       new StringOutputParser()
-    ]);
+    ]).withConfig({
+        callbacks: [new ConsoleCallbackHandler()],
+    });
 
     const answer = await chain.invoke(prompt.get("question") as string);
     console.log(answer);
