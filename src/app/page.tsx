@@ -1,24 +1,41 @@
-import styles from "./page.module.css";
+"use client"
 
+import styles from "./page.module.css";
 import { env } from "@xenova/transformers";
-import { query } from "./actions/query";
+import { useState } from "react";
 
 env.allowLocalModels = true;
 
-async function ChatbotInput() {
-  return (
-    <form action={query} className={styles.chatbotInputForm}>
-      <input name="question" type="search" autoComplete="off" className={styles.chatbotInputText}></input>
-      <button type="submit" className={styles.chatbotInputButton}>{">"}</button>
-    </form>
-  );
-} 
+function ChatbotBlock() {
+  const [chatbotMessage, setChatbotMessage] = useState("");
 
-export default async function Home() {
+  async function getMessage(formData: FormData) {
+    const response = await fetch("/actions/query", {
+      method: "POST",
+      body: formData.get("question"),
+    });
+
+    const responseJSON = await response.json();
+    setChatbotMessage(responseJSON.message);
+  }
+
+  return (
+    <div className={styles.chatbotBlock}>
+      <form action={getMessage} className={styles.chatbotInputForm}>
+        <input name="question" type="search" autoComplete="off" className={styles.chatbotInputText}></input>
+        <button type="submit" className={styles.chatbotInputButton}>{">"}</button>
+      </form>  
+      <p className={styles.chatbotMessage}>{chatbotMessage}</p>
+    </div>
+    
+  );
+}
+
+export default function Home() {
   return (
     <div className={styles.page}>
       <div className={styles.chatbotInput}>
-        <ChatbotInput />
+        <ChatbotBlock />
       </div>
     </div>
   );

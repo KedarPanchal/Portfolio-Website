@@ -12,6 +12,7 @@ import type { Document } from "@langchain/core/documents";
 import { StringOutputParser } from "@langchain/core/output_parsers";
 import { ConsoleCallbackHandler } from "@langchain/core/tracers/console";
 
+import { NextResponse } from "next/server";
 
 // Code to set up export
 async function getEmbeddings(documents: Array<string>) {
@@ -63,7 +64,7 @@ const model = new ChatGroq({
 });
 
 // Export function
-export async function query(prompt: FormData) {
+export async function POST(prompt: string) {
     "use server"
     const RAG_TEMPLATE = `Your task is to answer the given questions about Kedar Panchal using only the provided context. Never include details not present in the provided context.
     If you don't know the answer, say "I don't know." Answer in complete sentences, and use as many examples from the context as possible. Use correct grammar.
@@ -72,7 +73,8 @@ export async function query(prompt: FormData) {
     Context: {context}
     Answer:`;
     const rag_prompt = ChatPromptTemplate.fromTemplate(RAG_TEMPLATE);
-
+    console.log("Prompt start:");
+    console.log(prompt);
     const chain = RunnableSequence.from([
       {
         context: retriever.pipe((documents: Document[]) => (documents.map(document => document.pageContent)).join("\n\n")),
@@ -85,6 +87,9 @@ export async function query(prompt: FormData) {
         callbacks: [new ConsoleCallbackHandler()],
     });
 
-    const answer = await chain.invoke(prompt.get("question") as string);
+    const answer = await chain.invoke(prompt);
     console.log(answer);
+    return NextResponse.json({
+        message: answer,
+    });
   }
