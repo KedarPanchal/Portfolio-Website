@@ -73,8 +73,6 @@ export async function POST(prompt: string) {
     Context: {context}
     Answer:`;
     const rag_prompt = ChatPromptTemplate.fromTemplate(RAG_TEMPLATE);
-    console.log("Prompt start:");
-    console.log(prompt);
     const chain = RunnableSequence.from([
       {
         context: retriever.pipe((documents: Document[]) => (documents.map(document => document.pageContent)).join("\n\n")),

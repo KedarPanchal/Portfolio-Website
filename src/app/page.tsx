@@ -10,7 +10,7 @@ function ChatbotBlock() {
   const [chatbotMessage, setChatbotMessage] = useState("");
 
   async function getMessage(formData: FormData) {
-    const response = await fetch("/actions/query", {
+    const response = await fetch("/api/query", {
       method: "POST",
       body: formData.get("question"),
     });
