@@ -5,6 +5,22 @@
     align-items: center;
 }
 
+.chatbotBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100vw;
+    height: 82vh;
+
+
+    width: 100vw;
+    height: 82vh;
+
+    --radius: 10px;
+    --maxdim: 681px;
+}
+
 .chatbotInput {
     margin-top: 10vh;
 }
@@ -13,12 +29,6 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-
-    width: 100vw;
-    height: 82vh;
-
-    --radius: 10px;
-    --maxdim: 681px;
 }
 
 .chatbotInputText {
