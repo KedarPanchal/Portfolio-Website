@@ -64,7 +64,7 @@ const model = new ChatGroq({
 });
 
 // Export function
-export async function POST(prompt: string) {
+export async function POST(prompt: Request) {
     "use server"
     const RAG_TEMPLATE = `Your task is to answer the given questions about Kedar Panchal using only the provided context. Never include details not present in the provided context.
     If you don't know the answer, say "I don't know." Answer in complete sentences, and use as many examples from the context as possible. Use correct grammar.
@@ -72,6 +72,7 @@ export async function POST(prompt: string) {
     Question: {question}
     Context: {context}
     Answer:`;
+
     const rag_prompt = ChatPromptTemplate.fromTemplate(RAG_TEMPLATE);
     const chain = RunnableSequence.from([
       {
@@ -85,7 +86,8 @@ export async function POST(prompt: string) {
         callbacks: [new ConsoleCallbackHandler()],
     });
 
-    const answer = await chain.invoke(prompt);
+    const text = await prompt.text()
+    const answer = await chain.invoke(text);
     console.log(answer);
     return NextResponse.json({
         message: answer,
