@@ -23,7 +23,7 @@ async function getEmbeddings(documents: Array<string>) {
     const output = await embedder(document, {
         pooling: "mean",
         normalize: true,
-        });
+    });
     embeddings.push(Array.from(output.data));
     }
 
