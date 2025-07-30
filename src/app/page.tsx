@@ -23,9 +23,9 @@ function ChatbotBlock() {
     <div className={styles.chatbotBlock}>
       <form action={getMessage} className={styles.chatbotInputForm}>
         <input name="question" type="search" autoComplete="off" className={styles.chatbotInputText}></input>
-        <button type="submit" className={styles.chatbotInputButton}>{">"}</button>
+        <button type="submit" className={styles.chatbotInputButton}>{"↵"}</button>
       </form>  
-      <p className={styles.chatbotMessage}>{chatbotMessage}</p>
+      <p className={styles.chatbotOutputText}>{chatbotMessage}</p>
     </div>
     
   );
@@ -34,9 +34,7 @@ function ChatbotBlock() {
 export default function Home() {
   return (
     <div className={styles.page}>
-      <div className={styles.chatbotInput}>
-        <ChatbotBlock />
-      </div>
+      <ChatbotBlock />
     </div>
   );
 }
