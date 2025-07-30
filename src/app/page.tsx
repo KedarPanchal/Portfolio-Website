@@ -7,7 +7,8 @@ import { useState } from "react";
 env.allowLocalModels = true;
 
 function ChatbotBlock() {
-  const [chatbotQuestion, setChatbotQuestion] = useState((<p>I'm Kedar's AI assistant, ready to talk about his resume and work experience! Please ask me a question!</p>));
+  const defaultString = "I'm Kedar's AI assistant, ready to talk about his resume and work experience! Please ask me a question!";
+  const [chatbotQuestion, setChatbotQuestion] = useState((<p>{defaultString}</p>));
   const [chatbotMessage, setChatbotMessage] = useState("");
 
   async function getMessage(formData: FormData) {
@@ -22,7 +23,7 @@ function ChatbotBlock() {
       setChatbotQuestion((<p><b>You Asked: </b>{formData.get("question")! as string}</p>));
     } else {
       setChatbotMessage("");
-      setChatbotQuestion((<p>I'm Kedar's AI assistant, ready to talk about his resume and work experience! Please ask me a question!</p>));
+      setChatbotQuestion((<p>{defaultString}</p>));
     }
   }
 
