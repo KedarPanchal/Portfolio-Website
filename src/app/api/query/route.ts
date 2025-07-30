@@ -67,7 +67,7 @@ const model = new ChatGroq({
 export async function POST(prompt: Request) {
     "use server"
     const RAG_TEMPLATE = `Your task is to answer the given questions about Kedar Panchal using only the provided context. Never include details not present in the provided context.
-    If you don't know the answer, say "I don't know." Answer in complete sentences, and use as many examples from the context as possible. Use correct grammar.
+    Answer in complete sentences, and use as many examples from the context as possible. Use correct grammar.
 
     Question: {question}
     Context: {context}
