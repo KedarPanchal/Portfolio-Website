@@ -7,7 +7,7 @@ import { useState } from "react";
 env.allowLocalModels = true;
 
 function ChatbotBlock() {
-  const [chatbotQuestion, setChatbotQuestion] = useState("Please ask a question!");
+  const [chatbotQuestion, setChatbotQuestion] = useState((<p>I'm Kedar's AI assistant, ready to talk about his resume and work experience! Please ask me a question!</p>));
   const [chatbotMessage, setChatbotMessage] = useState("");
 
   async function getMessage(formData: FormData) {
@@ -17,10 +17,13 @@ function ChatbotBlock() {
     });
 
     const responseJSON = await response.json();
-    if (formData.get("question") != null) {
-      setChatbotQuestion(formData.get("question")! as string);
+    setChatbotMessage(responseJSON.message);
+    if (formData.get("question")) {
+      setChatbotQuestion((<p><b>You Asked: </b>{formData.get("question")! as string}</p>));
+    } else {
+      setChatbotMessage("");
+      setChatbotQuestion((<p>I'm Kedar's AI assistant, ready to talk about his resume and work experience! Please ask me a question!</p>));
     }
-    setChatbotMessage(responseJSON.message);;
   }
 
   return (
@@ -29,9 +32,10 @@ function ChatbotBlock() {
         <input name="question" type="search" autoComplete="off" className={styles.chatbotInputText}></input>
         <button type="submit" className={styles.chatbotInputButton}>{"↵"}</button>
       </form>  
-      <div className={styles.chatbotOutputText}>
-        <p><b>Question: </b>{chatbotQuestion}</p>
-        <p>{chatbotMessage}</p>
+      <div className={styles.chatbotOutput}>
+        {chatbotQuestion}
+        <span></span>
+        <p className={styles.chatbotOutputResponse}>{chatbotMessage}</p>
       </div>
       
     </div>

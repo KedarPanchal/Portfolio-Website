@@ -3,6 +3,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    overflow: scroll;
+    scrollbar-width: none;
 }
 
 .chatbotBlock {
@@ -72,7 +75,7 @@
 .chatbotInputButton {
     display: inline-flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
 
     width: 9vmin;
     height: 9vmin;
@@ -95,23 +98,31 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-.chatbotOutputText {
+.chatbotOutput {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: flex-start;
 
-    width: 90vmin;
     height: 100%;
     max-width: var(--maxdim);
 
     margin-top: 3vh;
     margin-bottom: 3vh;
+    padding-right: 1rem;
 
     text-align: left;
     text-overflow: wrap;
     line-height: 25px;
-    overflow: scroll;
+    overflow: auto;
+
+    scrollbar-color: var(--foreground) transparent;
+    scrollbar-width: thin;
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+.chatbotOutputResponse {
+    margin-top: 2vh;
 }
