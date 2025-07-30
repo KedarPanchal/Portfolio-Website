@@ -7,6 +7,7 @@ import { useState } from "react";
 env.allowLocalModels = true;
 
 function ChatbotBlock() {
+  const [chatbotQuestion, setChatbotQuestion] = useState("Please ask a question!");
   const [chatbotMessage, setChatbotMessage] = useState("");
 
   async function getMessage(formData: FormData) {
@@ -16,7 +17,10 @@ function ChatbotBlock() {
     });
 
     const responseJSON = await response.json();
-    setChatbotMessage(responseJSON.message);
+    if (formData.get("question") != null) {
+      setChatbotQuestion(formData.get("question")! as string);
+    }
+    setChatbotMessage(responseJSON.message);;
   }
 
   return (
@@ -25,7 +29,11 @@ function ChatbotBlock() {
         <input name="question" type="search" autoComplete="off" className={styles.chatbotInputText}></input>
         <button type="submit" className={styles.chatbotInputButton}>{"↵"}</button>
       </form>  
-      <p className={styles.chatbotOutputText}>{chatbotMessage}</p>
+      <div className={styles.chatbotOutputText}>
+        <p><b>Question: </b>{chatbotQuestion}</p>
+        <p>{chatbotMessage}</p>
+      </div>
+      
     </div>
     
   );

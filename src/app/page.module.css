@@ -10,30 +10,29 @@
     flex-direction: column;
     align-items: center;
 
-    width: 100vw;
-    height: 82vh;
+    width: 110vmin;
+    height: 50vmin;
 
+    margin-top: 10vh;
 
-    width: 100vw;
-    height: 82vh;
+    border: solid var(--foreground);
+    border-radius: var(--radius);
 
     --radius: 10px;
     --maxdim: 681px;
-}
-
-.chatbotInput {
-    margin-top: 10vh;
 }
 
 .chatbotInputForm {
     display: flex;
     flex-direction: row;
     justify-content: center;
+
+    margin-top: 3vh;
 }
 
 .chatbotInputText {
-    width: 60vmax;    
-    height: 3vmax;
+    width: 90vmin;    
+    height: 9vmin;
     max-width: var(--maxdim);
     max-height: calc(var(--maxdim)/15);
 
@@ -41,12 +40,12 @@
 
     margin-right: min(4.5px, 0.3vw);
 
-    border: solid white;
+    border: solid var(--foreground);
     border-bottom-left-radius: var(--radius);
     border-top-left-radius: var(--radius);
 
-    font-size: min(2.4vmin, 20px);
-    color: white;
+    font-size: clamp(15px, 2.4vmin, 30px);
+    color: var(--foreground);
     padding-left: min(1vw, 15px);
     padding-right: min(0.5vw, 7.5px);
 
@@ -61,8 +60,10 @@
 .chatbotInputText::-webkit-search-cancel-button {
     appearance: none;
     -webkit-appearance: none;
+
     height: 12px;
     width: 12px;
+
     background-size: contain;
     background-image: url("./images/x.png");
     cursor: pointer;
@@ -73,22 +74,43 @@
     align-items: center;
     justify-content: space-around;
 
-    width: 3vmax;
-    height: 3vmax;
+    width: 9vmin;
+    height: 9vmin;
     max-width: calc(var(--maxdim)/15);
     max-height: calc(var(--maxdim)/15);
 
-    background-color: transparent;
+    background-color: var(--foreground);
 
-    border: solid white;
+    border: solid var(--foreground);
     border-bottom-right-radius: var(--radius);
     border-top-right-radius: var(--radius);
     
-    font-size: 3vmin;
-    color: white;
+    font-size: clamp(20px, 3vmin, 30px);
+    color: var(--background);
     font-family: "Monaco", monospace;
     text-align: center;
     padding-bottom: 0.3vmax;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.chatbotOutputText {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    width: 90vmin;
+    height: 100%;
+    max-width: var(--maxdim);
+
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+
+    text-align: left;
+    text-overflow: wrap;
+    line-height: 25px;
+    overflow: scroll;
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

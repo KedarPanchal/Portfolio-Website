@@ -1,7 +1,6 @@
 :root {
     --background: #0a0a0a;
     --foreground: #ededed;
-    font-family: var(--font-geist-sans), sans-serif;
 }
 
 html,
@@ -46,6 +45,7 @@ a:hover {
 
   width: 100vw;
   height: 8vh;
+  min-height: 67px;
 
   padding-top: 1vh;
   padding-bottom: 1vh;
@@ -56,10 +56,10 @@ a:hover {
 
 .toolbar > h1 {
   flex-grow: 3;
-  font-size: 4vmin;
+  font-size: clamp(30px, 4vmin, 34px);
 }
 
 .toolbar > h2 {
   flex-grow: 1;
-  font-size: 2.8vmin;
+  font-size: clamp(21px, 2.8vmin, 24px);
 }
