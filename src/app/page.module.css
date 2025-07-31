@@ -6,6 +6,18 @@
 
     overflow: scroll;
     scrollbar-width: none;
+    scroll-snap-type: y mandatory;
+    scroll-padding-top: 10vh;
+}
+
+.page > section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    
+    scroll-snap-align: start;
 }
 
 .chatbotBlock {
@@ -13,8 +25,8 @@
     flex-direction: column;
     align-items: flex-start;
 
-    width: 110vmin;
-    height: 50vmin;
+    width: 90vw;
+    height: 50vh;
 
     margin-top: 10vh;
 
@@ -33,7 +45,7 @@
 }
 
 .chatbotInputText {
-    width: calc(104vmin - 4rem);
+    width: calc(90vw - 6vmin - 4rem);
     height: 6vmin;
 
     background-color: transparent;

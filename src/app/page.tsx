@@ -37,16 +37,16 @@ function ChatbotBlock() {
         {chatbotQuestion}
         <p className={styles.chatbotOutputResponse}>{chatbotMessage}</p>
       </div>
-      
     </div>
-    
   );
 }
 
 export default function Home() {
   return (
     <div className={styles.page}>
-      <ChatbotBlock />
+      <section>
+        <ChatbotBlock />  
+      </section>
     </div>
   );
 }
