@@ -22,13 +22,13 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <div className="toolbar">
+        <nav className="toolbar">
           <h1><Link href="/" style={{ textDecoration: "none" }}>Kedar Panchal</Link></h1>
           <h2><Link href="/" style={{ textDecoration: "none" }}>About</Link></h2>
           <h2><Link href="/" style={{ textDecoration: "none" }}>Experience</Link></h2>
           <h2><Link href="/" style={{ textDecoration: "none" }}>Projects</Link></h2>
           <h2><Link href="/" style={{ textDecoration: "none" }}>Certifications</Link></h2>
-        </div>
+        </nav>
         {children}
       </body>
     </html>

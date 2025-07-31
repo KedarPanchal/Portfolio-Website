@@ -55,17 +55,21 @@ a:hover {
 
   white-space: nowrap;
 
-  overflow: scroll;
-  scrollbar-width: hidden;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  scrollbar-color: transparent transparent;
 }
 
 .toolbar > h1 {
+  padding-right: 3vw;
   flex-grow: 3;
   font-size: clamp(30px, 4vmin, 34px);
 }
 
 .toolbar > h2 {
-  flex-grow: 1;
-  font-size: clamp(21px, 2.8vmin, 24px);
   padding-left: 3vw;
+
+  flex-grow: 1;
+  font-size: clamp(23px, 3vmin, 26px);
 }
