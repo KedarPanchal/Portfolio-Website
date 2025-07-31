@@ -35,7 +35,6 @@ function ChatbotBlock() {
       </form>  
       <div className={styles.chatbotOutput}>
         {chatbotQuestion}
-        <span></span>
         <p className={styles.chatbotOutputResponse}>{chatbotMessage}</p>
       </div>
       
