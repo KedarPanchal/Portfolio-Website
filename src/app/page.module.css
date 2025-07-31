@@ -11,7 +11,7 @@
 .chatbotBlock {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
 
     width: 110vmin;
     height: 50vmin;
@@ -22,7 +22,6 @@
     border-radius: var(--radius);
 
     --radius: 10px;
-    --maxdim: 681px;
 }
 
 .chatbotInputForm {
@@ -34,14 +33,13 @@
 }
 
 .chatbotInputText {
-    width: 90vmin;    
-    height: 9vmin;
-    max-width: var(--maxdim);
-    max-height: calc(var(--maxdim)/15);
+    width: calc(104vmin - 4rem);
+    height: 6vmin;
 
     background-color: transparent;
 
     margin-right: min(4.5px, 0.3vw);
+    margin-left: 2rem;
 
     border: solid var(--foreground);
     border-bottom-left-radius: var(--radius);
@@ -77,18 +75,18 @@
     align-items: center;
     justify-content: center;
 
-    width: 9vmin;
-    height: 9vmin;
-    max-width: calc(var(--maxdim)/15);
-    max-height: calc(var(--maxdim)/15);
+    width: 6vmin;
+    height: 6vmin;
 
     background-color: var(--foreground);
+
+    margin-right: 2rem;
 
     border: solid var(--foreground);
     border-bottom-right-radius: var(--radius);
     border-top-right-radius: var(--radius);
     
-    font-size: clamp(20px, 3vmin, 30px);
+    font-size: min(3vmin, 30px);
     color: var(--background);
     font-family: "Monaco", monospace;
     text-align: center;
@@ -103,18 +101,20 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
+    align-self: flex-start;
 
     height: 100%;
-    max-width: var(--maxdim);
+    width: 100%;
 
     margin-top: 3vh;
     margin-bottom: 3vh;
     padding-right: 1rem;
+    padding-left: 3rem;
 
     text-align: left;
     text-overflow: wrap;
     line-height: 25px;
-    overflow: auto;
+    overflow-y: scroll;
 
     scrollbar-color: var(--foreground) transparent;
     scrollbar-width: thin;
