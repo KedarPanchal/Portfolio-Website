@@ -24,7 +24,7 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <nav className="toolbar">
           <h1><Link href="#about" style={{ textDecoration: "none" }}>Kedar Panchal</Link></h1>
-          <h2><Link href="#chatbot" style={{ textDecoration: "none" }}>Chatbot</Link></h2>
+          <h2><Link href="#chatbot" style={{ textDecoration: "none" }}>AI Assistant</Link></h2>
           <h2><Link href="/" style={{ textDecoration: "none" }}>Experience</Link></h2>
           <h2><Link href="/" style={{ textDecoration: "none" }}>Projects</Link></h2>
           <h2><Link href="/" style={{ textDecoration: "none" }}>Certifications</Link></h2>
