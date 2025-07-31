@@ -37,7 +37,7 @@ a:hover {
 }
 
 .toolbar {
-  position: sticky;
+  position: fixed;
   top: 0;
 
   display: flex;

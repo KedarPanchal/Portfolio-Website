@@ -6,8 +6,6 @@
     width: 90vw;
     height: 50vh;
 
-    margin-top: 10vh;
-
     border: solid var(--foreground);
     border-radius: var(--radius);
 
