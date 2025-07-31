@@ -3,7 +3,6 @@
 import styles from "./page.module.css";
 import { ChatbotBlock } from "./components/chatbot";
 import { env } from "@xenova/transformers";
-import { useState } from "react";
 
 env.allowLocalModels = true;
 
