@@ -11,16 +11,16 @@ function ChatbotBlock() {
   const [chatbotQuestion, setChatbotQuestion] = useState((<p>{defaultString}</p>));
   const [chatbotMessage, setChatbotMessage] = useState("");
 
-  async function getMessage(formData: FormData) {
-    const response = await fetch("/api/query", {
-      method: "POST",
-      body: formData.get("question"),
-    });
-
-    const responseJSON = await response.json();
-    setChatbotMessage(responseJSON.message);
+  async function getMessage(formData: FormData) { 
     if (formData.get("question")) {
       setChatbotQuestion((<p><b>You Asked: </b>{formData.get("question")! as string}</p>));
+      const response = await fetch("/api/query", {
+        method: "POST",
+        body: formData.get("question"),
+      });
+
+      const responseJSON = await response.json();
+      setChatbotMessage(responseJSON.message);
     } else {
       setChatbotMessage("");
       setChatbotQuestion((<p>{defaultString}</p>));
