@@ -52,6 +52,11 @@ a:hover {
   padding-left: 1vw;
   padding-right: 2vw;
   border-bottom: solid var(--foreground);
+
+  white-space: nowrap;
+
+  overflow: scroll;
+  scrollbar-width: hidden;
 }
 
 .toolbar > h1 {
@@ -62,4 +67,5 @@ a:hover {
 .toolbar > h2 {
   flex-grow: 1;
   font-size: clamp(21px, 2.8vmin, 24px);
+  padding-left: 3vw;
 }
