@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { Toolbar } from "./components/toolbar";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -22,7 +21,6 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <Toolbar />
         {children}
       </body>
     </html>
