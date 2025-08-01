@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import Link from "next/link";
+import { Toolbar } from "./components/toolbar";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -22,13 +22,7 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <nav className="toolbar">
-          <h1><Link href="#about" style={{ textDecoration: "none" }}>Kedar Panchal</Link></h1>
-          <h2><Link href="#chatbot" style={{ textDecoration: "none" }}>AI Assistant</Link></h2>
-          <h2><Link href="/" style={{ textDecoration: "none" }}>Experience</Link></h2>
-          <h2><Link href="/" style={{ textDecoration: "none" }}>Projects</Link></h2>
-          <h2><Link href="/" style={{ textDecoration: "none" }}>Certifications</Link></h2>
-        </nav>
+        <Toolbar />
         {children}
       </body>
     </html>
