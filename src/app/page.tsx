@@ -23,6 +23,15 @@ export default function Home() {
       <section id="chatbot">
         <ChatbotBlock />  
       </section>
+      <section id="experience">
+
+      </section>
+      <section id="projects">
+
+      </section>
+      <section id="certifications">
+
+      </section>
     </div>
   );
 }

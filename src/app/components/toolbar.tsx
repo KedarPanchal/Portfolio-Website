@@ -9,10 +9,13 @@ interface ToolbarProps {
     root: RefObject<HTMLDivElement|null>
 }
 export function Toolbar({root}: ToolbarProps) {
-    type ToolbarKey = "about" | "chatbot";
+    type ToolbarKey = "about" | "chatbot" | "experience" | "projects" | "certifications";
     const toolbarRefs: Record<ToolbarKey, RefObject<HTMLAnchorElement|null>> = {
         about: useRef<HTMLAnchorElement>(null),
         chatbot: useRef<HTMLAnchorElement>(null),
+        experience: useRef<HTMLAnchorElement>(null),
+        projects: useRef<HTMLAnchorElement>(null),
+        certifications: useRef<HTMLAnchorElement>(null),
     }
 
     useEffect(() => {
@@ -46,13 +49,13 @@ export function Toolbar({root}: ToolbarProps) {
                 <Link href="#chatbot" ref={toolbarRefs["chatbot"]} style={{ textDecoration: "none" }}>AI Assistant</Link>
             </span>
             <span>
-                <Link href="/" style={{ textDecoration: "none" }}>Experience</Link>
+                <Link href="#experience" ref={toolbarRefs["experience"]} style={{ textDecoration: "none" }}>Experience</Link>
             </span>
             <span>
-                <Link href="/" style={{ textDecoration: "none" }}>Projects</Link>
+                <Link href="#projects" ref={toolbarRefs["projects"]} style={{ textDecoration: "none" }}>Projects</Link>
             </span>
             <span>
-                <Link href="/" style={{ textDecoration: "none" }}>Certifications</Link>
+                <Link href="#certifications" ref={toolbarRefs["certifications"]} style={{ textDecoration: "none" }}>Certifications</Link>
             </span>
         </nav>  
     );
