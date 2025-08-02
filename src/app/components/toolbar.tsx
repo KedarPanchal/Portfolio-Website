@@ -23,6 +23,9 @@ export function Toolbar({root}: ToolbarProps) {
                         behavior: "smooth",
                         inline: "center",
                     });
+                    toolbarRefs[entry.target.id as ToolbarKey].current!.style.fontWeight = "normal";
+                } else {
+                    toolbarRefs[entry.target.id as ToolbarKey].current!.style.fontWeight = "lighter";
                 }
             })
         }, {
@@ -36,11 +39,21 @@ export function Toolbar({root}: ToolbarProps) {
     
     return (
         <nav className={styles.toolbar}>
-            <h1><Link href="#about" ref={toolbarRefs["about"]} style={{ textDecoration: "none" }}>Kedar Panchal</Link></h1>
-            <h2><Link href="#chatbot" ref={toolbarRefs["chatbot"]} style={{ textDecoration: "none" }}>AI Assistant</Link></h2>
-            <h2><Link href="/" style={{ textDecoration: "none" }}>Experience</Link></h2>
-            <h2><Link href="/" style={{ textDecoration: "none" }}>Projects</Link></h2>
-            <h2><Link href="/" style={{ textDecoration: "none" }}>Certifications</Link></h2>
-        </nav>
+            <span>
+                <Link href="#about" ref={toolbarRefs["about"]} style={{ textDecoration: "none" }}>Kedar Panchal</Link>
+            </span>
+            <span>
+                <Link href="#chatbot" ref={toolbarRefs["chatbot"]} style={{ textDecoration: "none" }}>AI Assistant</Link>
+            </span>
+            <span>
+                <Link href="/" style={{ textDecoration: "none" }}>Experience</Link>
+            </span>
+            <span>
+                <Link href="/" style={{ textDecoration: "none" }}>Projects</Link>
+            </span>
+            <span>
+                <Link href="/" style={{ textDecoration: "none" }}>Certifications</Link>
+            </span>
+        </nav>  
     );
 }

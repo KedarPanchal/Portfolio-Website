@@ -1,48 +1,56 @@
-
 .toolbar {
-  position: fixed;
-  top: 0;
+    position: fixed;
+    top: 0;
 
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
 
-  width: 100vw;
-  height: 8vh;
-  min-height: 67px;
+    width: 100vw;
+    height: 8vh;
+    min-height: 67px;
 
-  padding-top: 1vh;
-  padding-bottom: 1vh;
-  padding-left: 1vw;
-  padding-right: 2vw;
-  border-bottom: solid var(--foreground);
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    border-bottom: solid var(--foreground);
 
-  background-color: var(--background);
+    background-color: var(--background);
 
-  white-space: nowrap;
+    white-space: nowrap;
 
-  overflow-x: scroll;
-  overflow-y: hidden;
-  scrollbar-width: none;
-  scrollbar-color: transparent transparent;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: var(--foreground) transparent;
 }
 
-.toolbar > h1 {
-  padding-right: 3vw;
-
-  flex-grow: 3;
-  font-size: clamp(30px, 4vmin, 34px);
+.toolbarElement:hover {
+    font-size: clamp(30.375px, 4.05vmin, 34.425px)
 }
 
-.toolbar > h1:hover,
-.toolbar > h2:hover {
-    text-decoration: underline;
+.toolbar > span {
+    display: block;
+    flex: 0 0 1;
+
+    padding-left: 1.5vw;
+    padding-right: 1.5vw;
+
+    font-size: clamp(30px, 3vmin, 34px);
+    font-weight: lighter;
+    text-align: center;
 }
 
-.toolbar > h2 {
-  padding-left: 3vw;
-
-  flex-grow: 1;
-  font-size: clamp(23px, 3vmin, 26px);
+@media only screen and (max-width: 500px) {
+    .toolbar {
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+    }
+    .toolbar > span {
+        flex: 0 0 100%;
+        height: 100%;
+        scroll-snap-align: start;
+    }
 }
