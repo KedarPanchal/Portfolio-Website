@@ -27,7 +27,7 @@
     scrollbar-color: var(--foreground) transparent;
 }
 
-.toolbarElement:hover {
+.toolbar > span:hover {
     font-size: clamp(30.375px, 4.05vmin, 34.425px)
 }
 
