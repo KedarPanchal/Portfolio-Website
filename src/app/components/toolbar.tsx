@@ -38,7 +38,7 @@ export function Toolbar({root}: ToolbarProps) {
 
         root.current!.querySelectorAll("section").forEach((section) => menuObserver.observe(section));
         return () => menuObserver.disconnect();
-    }, []);
+    });
     
     return (
         <nav className={styles.toolbar}>
