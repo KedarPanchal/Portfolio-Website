@@ -2,7 +2,6 @@ import styles from "./projectwidget.module.css";
 
 import Link from "next/link";
 import Image, { StaticImageData } from "next/image";
-import { Url } from "url";
 
 interface ProjectWidgetProps {
     href: string,
