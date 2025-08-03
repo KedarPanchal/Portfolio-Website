@@ -6,7 +6,7 @@
     border-width: 0.3vmin;
     border-radius: 10px;
 
-    --size: 35vmin;
+    --size: 40vmin;
 }
 
 .widgetTop {
@@ -31,7 +31,7 @@
 .widgetTitle {
     padding: 0.75vw;
 
-    font-size: 1rem;
+    font-size: 2.5vmin;
     color: var(--foreground);
 }
 
@@ -50,5 +50,5 @@
     padding: 1vmin;
 
     color: var(--background);
-    font-size: 0.9rem;
+    font-size: 2vmin;
 }

@@ -37,7 +37,7 @@ export default function Home() {
         <div className={styles.projectGrid}>
           <ProjectWidget 
             href={"https://colab.research.google.com/github/KedarPanchal/Breast-Cancer-Detector/blob/main/tumor_detector.ipynb"} 
-            imageSrc={colabLogo} widgetTitle="Fine&#8209;Tuning EfficientNet&#8209;B1 for Breast Cancer Detection" 
+            imageSrc={colabLogo} widgetTitle="EfficientNet&#8209;B1 Breast Cancer Detection Fine&#8209;Tune" 
             widgetDescription="A Jupyter notebook for quickly fine&#8209;tuning EfficientNet&#8209;B1 to classify breast tumors in ultrasounds as malignant or benign." 
           />
           <ProjectWidget 
