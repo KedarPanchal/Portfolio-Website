@@ -1,4 +1,27 @@
+.chatbotBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .profileImage {
     object-fit: cover;
     border-radius: 50%;
+    width: var(--image-dim);
+    height: var(--image-dim);
+
+    --image-dim: 30vmin;
+}
+
+.aboutMeText {
+    margin-top: 10vh;
+    margin-left: 15vw;
+    margin-right: 15vw;
+
+    font-size: 2vmax;
+}
+
+.name {
+    font-weight: bold;
+    color: turquoise;
 }
