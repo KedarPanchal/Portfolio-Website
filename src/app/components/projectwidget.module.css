@@ -1,0 +1,56 @@
+.widgetBlock {
+    width: var(--size);
+    height: calc(2 * var(--size)/3);
+
+    border: solid var(--foreground);
+    border-width: 0.3vmin;
+    border-radius: 10px;
+
+    --size: 35vmin;
+}
+
+.widgetTop {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    width: calc(var(--size) - 0.3vmin);
+    height: calc(var(--size)/3);
+    overflow: hidden;
+
+    background-color: var(--red);
+}
+
+.widgetImage {
+    width: var(--image-size);
+    height: var(--image-size);
+
+    margin-left: 0.5vw;
+
+    --image-size: 7vmin;
+}
+
+.widgetTitle {
+    padding-left: 0.75vw;
+
+    font-size: 1rem;
+    color: var(--foreground);
+}
+
+.widgetBottom {
+    width: calc(var(--size) - 0.3vmin);
+    height: calc(var(--size)/3);
+
+    overflow: hidden;
+
+    background-color: var(--foreground);
+
+    border-radius: 0px 0px 10px 10px;
+}
+
+.widgetDescription {
+    padding: 1vmin;
+
+    color: var(--background);
+    font-size: 0.9rem;
+}
