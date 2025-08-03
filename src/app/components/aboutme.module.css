@@ -23,5 +23,5 @@
 
 .name {
     font-weight: bold;
-    color: turquoise;
+    color: var(--highlight);
 }
