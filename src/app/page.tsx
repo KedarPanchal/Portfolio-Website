@@ -63,7 +63,7 @@ export default function Home() {
           />
           <ProjectWidget 
             href={"https://github.com/KedarPanchal/LSPP"} 
-            imageSrc={githubLogo} widgetTitle="lspp (ls++)" 
+            imageSrc={githubLogo} widgetTitle="lspp (ls++) CLI Tool" 
             widgetDescription="An improved form of the ls command that lists files in a tree-style structure. Built with Java and Maven and compiled to run natively with GraalVM." 
           />
         </div>
