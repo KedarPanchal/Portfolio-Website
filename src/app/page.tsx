@@ -7,11 +7,11 @@ import { AboutMeBlock } from "./components/aboutme";
 import { ChatbotBlock } from "./components/chatbot";
 import { ProjectWidget } from "./components/projectwidget";
 
-import githubLogo from "../public/images/githublogo.png";
-import huggingfaceLogo from "../public/images/huggingfacelogo.png";
-import gimpLogo from "../public/images/gimplogo.png";
-import colabLogo from "../public/images/colablogo.webp";
-import nextLogo from "../public/images/nextlogo.png";
+import githubLogo from "../public/images/logos/githublogo.png";
+import huggingfaceLogo from "../public/images/logos/huggingfacelogo.png";
+import gimpLogo from "../public/images/logos/gimplogo.png";
+import colabLogo from "../public/images/logos/colablogo.webp";
+import nextLogo from "../public/images/logos/nextlogo.png";
 
 import { useRef } from "react";
 
