@@ -29,9 +29,10 @@
     border-top-left-radius: var(--radius);
 
     font-size: clamp(15px, 2.4vmin, 30px);
+    font-size: 1.3rem;
     color: var(--foreground);
-    padding-left: min(1vw, 15px);
-    padding-right: min(0.5vw, 7.5px);
+    padding-left: 1rem;
+    padding-right: 0.5rem;
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -92,6 +93,7 @@
     border-bottom-right-radius: var(--radius);
 
     color: var(--foreground);
+    font-size: 1.15rem;
     text-align: left;
     text-overflow: wrap;
     line-height: 25px;
