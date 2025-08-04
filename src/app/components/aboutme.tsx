@@ -31,6 +31,23 @@ function SkillWidget({imageSrc, altText="", skillName, style}: SkillWidgetProps)
 }
 
 export function AboutMeBlock() {
+    type Skill = {
+        image: StaticImageData;
+        name: string;
+    }
+    
+    const skillsArray: Skill[] = [
+        {image: pythonLogo, name: "Python"}, 
+        {image: javaLogo, name: "Java"}, 
+        {image: pytorchLogo, name: "PyTorch"}, 
+        {image: githubLogo, name: "Git & GitHub"}, 
+        {image: huggingfaceLogo, name: "Huggingface"},
+        {image: tsLogo, name: "TypeScript"},
+        {image: nextLogo, name: "Next.js"},
+        {image: sklearnLogo, name: "scikit-learn"},
+        {image: kerasLogo, name: "Keras"},
+        {image: dockerLogo, name: "Docker"},
+    ];
     return (
         <div className={styles.chatbotBlock}>
             <Image src={profileImage} alt="A picture of Kedar Panchal" className={styles.profileImage}/>
@@ -39,16 +56,13 @@ export function AboutMeBlock() {
                 Feel free to scroll down to interact with an <b>AI assistant</b> to learn about my projects, skills, work experience, and more, or <b>explore my website further</b> to view this information in-depth.
             </p>
             <div className={styles.skillsBlock}>
-                <SkillWidget imageSrc={pythonLogo} skillName="Python"/>
-                <SkillWidget imageSrc={javaLogo} skillName="Java" />
-                <SkillWidget imageSrc={pytorchLogo} skillName="PyTorch" />
-                <SkillWidget imageSrc={githubLogo} skillName="Git & GitHub" />
-                <SkillWidget imageSrc={huggingfaceLogo} skillName="Huggingface" />
-                <SkillWidget imageSrc={tsLogo} skillName="TypeScript" />
-                <SkillWidget imageSrc={nextLogo} skillName="Next.js" />
-                <SkillWidget imageSrc={sklearnLogo} skillName="scikit-learn" />
-                <SkillWidget imageSrc={kerasLogo} skillName="Keras" />
-                <SkillWidget imageSrc={dockerLogo} skillName="Docker" style={{ gridColumnStart: 2 }}/>
+                {skillsArray.map((skill, i, arr) => {
+                    if (i < arr.length - 1) {
+                        return <SkillWidget imageSrc={skill.image} skillName={skill.name} key={i}/>  
+                    } else {
+                        return <SkillWidget imageSrc={skill.image} skillName={skill.name} style={{ gridColumnStart: 2 }} key={i}/>
+                    }
+                })}
             </div>
         </div>
     )
