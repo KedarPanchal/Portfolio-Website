@@ -5,7 +5,7 @@ import styles from "./page.module.css";
 import { Toolbar } from "./components/toolbar";
 import { AboutMeBlock } from "./components/aboutme";
 import { ChatbotBlock } from "./components/chatbot";
-import { Projects } from "./components/project";
+import { Projects } from "./components/projects";
 
 import { useRef } from "react";
 
