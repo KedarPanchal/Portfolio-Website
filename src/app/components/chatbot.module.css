@@ -1,36 +1,31 @@
 .chatbotBlock {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    display: grid;
+    grid-template-rows: 1fr 7fr;
+    gap: 1.5vmin;
 
     width: 90vw;
     height: 50vh;
-
-    border: solid var(--foreground);
-    border-radius: var(--radius);
 
     --radius: 10px;
 }
 
 .chatbotInputForm {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 15fr 1fr;
+    grid-template-rows: auto;
+    gap: 0;
 
-    margin-top: 3vh;
+    grid-row: 1;
+    height: auto;
 }
 
 .chatbotInputText {
-    width: calc(90vw - 6vmin - 4rem);
-    height: 6vmin;
+    width: auto;
+    height: auto;
 
     background-color: transparent;
 
-    margin-right: min(4.5px, 0.3vw);
-    margin-left: 2rem;
-
     border: solid var(--foreground);
-    border-bottom-left-radius: var(--radius);
     border-top-left-radius: var(--radius);
 
     font-size: clamp(15px, 2.4vmin, 30px);
@@ -59,19 +54,12 @@
 }
 
 .chatbotInputButton {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 6vmin;
-    height: 6vmin;
+    width: 100%;
+    height: 100%;
 
     background-color: var(--foreground);
 
-    margin-right: 2rem;
-
     border: solid var(--foreground);
-    border-bottom-right-radius: var(--radius);
     border-top-right-radius: var(--radius);
     
     font-size: min(3vmin, 30px);
@@ -91,13 +79,18 @@
     align-items: flex-start;
     align-self: flex-start;
 
-    height: 100%;
-    width: 100%;
+    grid-row: 2;
 
-    margin-top: 3vh;
-    margin-bottom: 3vh;
+    width: auto;
+    height: 100%;
+
+    padding-top: 1rem;
     padding-right: 1rem;
-    padding-left: 3rem;
+    padding-left: 1rem;
+
+    border: solid var(--foreground);
+    border-bottom-left-radius: var(--radius);
+    border-bottom-right-radius: var(--radius);
 
     text-align: left;
     text-overflow: wrap;
@@ -113,4 +106,5 @@
 
 .chatbotOutputResponse {
     margin-top: 2vh;
+    padding-bottom: 2vh;
 }
