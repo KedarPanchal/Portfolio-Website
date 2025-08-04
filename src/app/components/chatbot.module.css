@@ -28,7 +28,6 @@
     border: solid var(--foreground);
     border-top-left-radius: var(--radius);
 
-    font-size: clamp(15px, 2.4vmin, 30px);
     font-size: 1.3rem;
     color: var(--foreground);
     padding-left: 1rem;
