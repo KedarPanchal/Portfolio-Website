@@ -1,12 +1,17 @@
 .chatbotBlock {
     display: grid;
-    grid-template-rows: 1fr 2fr;
-    grid-template-columns: 100%;
-    place-items: center;
+    grid-template-rows: 1fr 5fr;
+    grid-template-columns: 3fr 2fr;
+    justify-items: center;
     gap: 10vmin;
+
+    height: 100%;
 }
 
 .profileImage {
+    grid-row: 1;
+    grid-column: 1;
+
     width: var(--image-dim);
     height: var(--image-dim);    
     
@@ -16,19 +21,66 @@
     border: solid var(--highlight);
     border-width: 4.8px;
 
-    --image-dim: 40vmin;
+    --image-dim: 30vmin;
 }
 
 .aboutMeText {
+    grid-row: 2;
+    grid-column: 1;
+
     height: 100%;
 
-    margin-left: 15vw;
-    margin-right: 15vw;
+    margin-left: 5vw;
 
-    font-size: 2vmax;
+    font-size: 1.6vmax;
+    color: var(--foreground);
 }
 
 .name {
     font-weight: bold;
     color: var(--highlight);
+}
+
+.skillsBlock {
+    grid-row: 1 / -1;
+    grid-column: 2;
+    align-self: stretch;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    width: 100%;
+    height: 100%;
+}
+
+.skillWidget {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    width: var(--size);
+    height: calc(2 * var(--size)/3);
+
+    background-color: var(--background-light);
+
+    border: solid var(--foreground);
+    border-width: 0.2vmin;
+    border-radius: 10px;
+    
+    --size: 10vmax;
+}
+
+.skillImage {
+    width: calc(var(--size)/3);
+    height: calc(var(--size)/3);
+
+    margin-top: 0.5vmax;
+}
+
+.skillName {
+    margin-bottom: 0.5vmax;
+
+    color: var(--foreground);
+    text-align: center;
 }
