@@ -1,20 +1,27 @@
 .chatbotBlock {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+    grid-template-columns: 100%;
+    place-items: center;
+    gap: 10vmin;
 }
 
 .profileImage {
+    width: var(--image-dim);
+    height: var(--image-dim);    
+    
     object-fit: cover;
     border-radius: 50%;
-    width: var(--image-dim);
-    height: var(--image-dim);
+    
+    border: solid var(--highlight);
+    border-width: 0.3rem;
 
-    --image-dim: 30vmin;
+    --image-dim: 40vmin;
 }
 
 .aboutMeText {
-    margin-top: 10vh;
+    height: 100%;
+
     margin-left: 15vw;
     margin-right: 15vw;
 
