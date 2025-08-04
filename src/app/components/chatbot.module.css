@@ -75,7 +75,6 @@
 .chatbotOutput {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: flex-start;
     align-self: flex-start;
 

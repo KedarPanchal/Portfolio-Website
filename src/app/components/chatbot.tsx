@@ -2,7 +2,7 @@ import styles from "./chatbot.module.css";
 import { useState } from "react";
 
 export function ChatbotBlock() {
-    const defaultString = "I'm Kedar's AI assistant, ready to talk about his resume and work experience! Please ask me a question!";
+    const defaultString = "I'm Kedar's AI assistant, ready to talk about his resume and work experience. Let me know how I can help!";
     const [chatbotQuestion, setChatbotQuestion] = useState((<p>{defaultString}</p>));
     const [chatbotMessage, setChatbotMessage] = useState("");
 
