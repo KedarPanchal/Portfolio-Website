@@ -1,9 +1,10 @@
 .workExperienceBlock {
     display: grid;
     grid-template-columns: 1fr 10fr 1fr;
+    grid-template-rows: 50vh;
 
     width: 100vw;
-    height: 50vh;
+    height: 100vh;
 }
 
 .navButton {
@@ -23,11 +24,11 @@
     grid-column: 2;
 
     display: grid;
-    grid-template-rows: 1fr 7fr;
+    grid-template-rows: auto 7fr;
     row-gap: 1.5vmin;
 
     width: 100%;
-    height: 100%;
+    height: auto;
 }
 
 .jobTitle {
@@ -41,7 +42,10 @@
 
 .jobTitleText {
     padding-top: 1vmin;
-    padding-left: 1vmin; 
+    padding-bottom: 1vmin;
+    padding-left: 3vmin; 
+
+    font-size: 1.6vmax;
     font-style: none;
     font-weight: inherit;
 }
