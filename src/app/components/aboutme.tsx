@@ -49,7 +49,7 @@ export function AboutMeBlock() {
         {image: dockerLogo, name: "Docker"},
     ];
     return (
-        <div className={styles.chatbotBlock}>
+        <div className={styles.aboutMeBlock}>
             <Image src={profileImage} alt="A picture of Kedar Panchal" className={styles.profileImage}/>
             <p className={styles.aboutMeText}>
                 Hi, I&#39;m <span className={styles.name}>Kedar Panchal</span>, a Computer Science and Engineering Honors student at Texas A&M with a passion for artificial intelligence and its potential to create innovative solutions.
