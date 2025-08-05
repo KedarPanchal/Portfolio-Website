@@ -59,6 +59,14 @@
     border-bottom-right-radius: 10px;
 }
 
+.jobDate {
+    padding-top: 1vmin;
+    padding-left: 3vmin;
+
+    color: var(--foreground);
+    font-style: italic;
+}
+
 .jobDescriptionText {
     color: var(--foreground);
 
