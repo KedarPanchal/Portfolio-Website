@@ -6,6 +6,7 @@ import { Toolbar } from "./components/toolbar";
 import { AboutMeBlock } from "./components/aboutme";
 import { ChatbotBlock } from "./components/chatbot";
 import { Projects } from "./components/projects";
+import { WorkExperienceBlock } from "./components/workexperience";
 
 import { useRef } from "react";
 
@@ -25,7 +26,7 @@ export default function Home() {
         <ChatbotBlock />  
       </section>
       <section id="experience">
-
+        <WorkExperienceBlock />
       </section>
       <section id="projects">
         <Projects />

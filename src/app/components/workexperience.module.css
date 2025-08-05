@@ -1,0 +1,49 @@
+.workExperienceBlock {
+    display: grid;
+    grid-template-rows: 1fr 6fr;
+}
+
+.workExperienceWidget {
+    grid-row-start: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    width: var(--size);
+    height: calc(6 * var(--size)/11);
+
+    border: solid var(--foreground);
+    border-width: 0.2vmin;
+
+    text-align: left;
+
+    --size: 20vmin;
+}
+
+.workExperienceWidget:hover {
+    cursor: pointer;
+}
+
+.workExperienceWidgetUnselected {
+    background-color: var(--background);
+    color: var(--foreground);
+}
+
+.workExperienceWidgetSelected {
+    background-color: var(--foreground);
+    color: var(--background);
+}
+
+.jobTitle {
+    padding-left: 1vw;
+
+    font-size: clamp(6px, 1.6vmin, 20px);
+}
+
+.companyName {
+    padding-left: 1vw;
+
+    font-size: clamp(6px, 1.6vmin, 20px);
+    font-style: italic;
+}
