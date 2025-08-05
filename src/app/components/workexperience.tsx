@@ -24,13 +24,13 @@ function WorkExperience({jobName, workplaceName}: WorkExperienceProps) {
 export function WorkExperienceBlock() {
     const [experienceIndex, setExperienceIndex] = useState(0);
     const workExperienceArr = [
-        (<WorkExperience jobName="Automation Developer" workplaceName="MathNMore LLC" />),
-        (<WorkExperience jobName="Assistant Project Manager" workplaceName="Recharge Realty LLC" />),
-        (<WorkExperience jobName="Vice President of Operations" workplaceName="McNeil DECA" />),
-        (<WorkExperience jobName="Academic Tutor" workplaceName="Eye Level Learning" />),
-        (<WorkExperience jobName="Summer Robotics Research Intern" workplaceName="The University of Texas at Austin RobIn Lab" />),
-        (<WorkExperience jobName="Acadmic Tutor" workplaceName="Global Impact Initiative" />),
-        (<WorkExperience jobName="Founder" workplaceName="Arbitrarium Games" />),
+        (<WorkExperience jobName="Automation Developer" workplaceName="MathNMore LLC" key={0} />),
+        (<WorkExperience jobName="Assistant Project Manager" workplaceName="Recharge Realty LLC" key={1} />),
+        (<WorkExperience jobName="Vice President of Operations" workplaceName="McNeil DECA" key={2} />),
+        (<WorkExperience jobName="Academic Tutor" workplaceName="Eye Level Learning" key={3} />),
+        (<WorkExperience jobName="Summer Robotics Research Intern" workplaceName="The University of Texas at Austin RobIn Lab" key={4} />),
+        (<WorkExperience jobName="Acadmic Tutor" workplaceName="Global Impact Initiative" key={5} />),
+        (<WorkExperience jobName="Founder" workplaceName="Arbitrarium Games" key={6} />),
     ];
 
     const incrementExperienceIndex = () => {
