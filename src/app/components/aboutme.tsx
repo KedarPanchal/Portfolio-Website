@@ -59,7 +59,7 @@ export function AboutMeBlock() {
                 {skillsArray.map((skill, i, arr) => {
                     if (i < arr.length - 1) {
                         return <SkillWidget imageSrc={skill.image} skillName={skill.name} key={i}/>  
-                    } else {
+                    } else if (arr.length % 3 == 1) {
                         return <SkillWidget imageSrc={skill.image} skillName={skill.name} style={{ gridColumnStart: 2 }} key={i}/>
                     }
                 })}
