@@ -51,11 +51,11 @@ export function WorkExperienceBlock() {
 
     return (
         <div className={styles.workExperienceBlock}>
-            <button className={styles.navButton} onClick={incrementExperienceIndex}>
+            <button className={styles.navButton} onClick={decrementExperienceIndex}>
                 <p>{"<"}</p>
             </button>
                 {workExperienceArr[experienceIndex]}
-            <button className={styles.navButton} onClick={decrementExperienceIndex}>
+            <button className={styles.navButton} onClick={incrementExperienceIndex}>
                 <p>{">"}</p>
             </button>
         </div>
