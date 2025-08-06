@@ -7,6 +7,7 @@ import { AboutMeBlock } from "./components/aboutme";
 import { WorkExperienceBlock } from "./components/workexperience";
 import { ChatbotBlock } from "./components/chatbot";
 import { ProjectsBlock } from "./components/projects";
+import { CertificationsBlock } from "./components/certifications";
 
 import { useRef } from "react";
 
@@ -32,7 +33,7 @@ export default function Home() {
         <ProjectsBlock />
       </section>
       <section id="certifications">
-      
+        <CertificationsBlock />
       </section>
     </div>
   );
