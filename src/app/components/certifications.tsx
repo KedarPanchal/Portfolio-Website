@@ -66,8 +66,8 @@ export function CertificationsBlock() {
                     return <CertificationWidget imageSrc={certification.image} altText={certification.altText ?? ""} certificationName={certification.name} key={i}/>
                 } else if (arr.length % 3 == 1) {
                     return (
-                        <div className={styles.finalCertificationWidget}>
-                            <CertificationWidget imageSrc={certification.image} altText={certification.altText ?? ""} certificationName={certification.name} key={i}/>
+                        <div className={styles.finalCertificationWidget} key={i}>
+                            <CertificationWidget imageSrc={certification.image} altText={certification.altText ?? ""} certificationName={certification.name} />
                         </div>
                     );
                 }
