@@ -1,21 +1,16 @@
-
 .projectGrid {
     display: grid;
     grid-template-rows: 1fr 1fr;
     grid-auto-flow: column;
     justify-items: center;
 
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 80%;
 }
 
 .widgetBlock {
     width: var(--size);
     height: calc(2 * var(--size)/3);
-
-    border: solid var(--foreground);
-    border-width: 0.3vmin;
-    border-radius: 10px;
 
     --size: 40vmin;
 }
@@ -25,8 +20,15 @@
     flex-direction: row;
     align-items: center;
 
+    background-color: var(--background-light);
+
     width: calc(var(--size) - 0.3vmin);
-    height: calc(var(--size)/3);
+    height: calc(var(--size)/3 - 0.3vmin);
+
+    border: solid var(--foreground);
+    border-width: 0.3vmin 0.3vmin 0 0.3vmin;
+    border-radius: 10px 10px 0px 0px;
+
     overflow: hidden;
 }
 
@@ -49,19 +51,21 @@
 
 .widgetBottom {
     width: calc(var(--size) - 0.3vmin);
-    height: calc(var(--size)/3);
+    height: calc(var(--size)/3 - 0.3vmin);
 
     overflow: hidden;
 
-    background-color: var(--foreground);
+    background-color: var(--background-light);
 
+    border: solid var(--foreground);
+    border-width: 0 0.3vmin 0.3vmin 0.3vmin;
     border-radius: 0px 0px 10px 10px;
 }
 
 .widgetDescription {
     padding: 1vmin;
 
-    color: var(--background);
+    color: var(--foreground);
     font-size: 2vmin;
 }
 
