@@ -13,13 +13,13 @@ type JobDate = {
     endMonth?: Month,
     endYear: number | "Present",
 }
-interface WorkExperienceProps {
+interface WorkExperienceWidgetProps {
     jobName: string,
     workplaceName: string,
     date: JobDate,
     description: string[],
 }
-function WorkExperience({jobName, workplaceName, date, description}: WorkExperienceProps) {
+function WorkExperienceWidget({jobName, workplaceName, date, description}: WorkExperienceWidgetProps) {
     return (
         <div className={styles.workExperience}>
             <div className={styles.jobTitle}>
@@ -169,7 +169,7 @@ export function WorkExperienceBlock() {
     ];
 
     const workExperienceArr = jobs.map((job, i) => {
-        return <WorkExperience 
+        return <WorkExperienceWidget 
             jobName={job.name} 
             workplaceName={job.workplace} 
             date={job.date} 
