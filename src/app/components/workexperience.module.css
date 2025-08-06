@@ -8,16 +8,35 @@
 }
 
 .navButton {
+    align-self: center;
+
+    width: auto;
+    height: var(--size);
+
     background-color: var(--background);
 
     border: none;
 
     color: var(--foreground);
     font-size: 10vmin;
+
+    --size: 10vmin;
 }
 
 .navButton:hover {
     cursor: pointer;
+}
+
+.navButtonLeftArrow {
+    width: calc(0.511 * var(--size));
+    height: var(--size);
+}
+
+.navButtonRightArrow {
+    width: calc(0.511 * var(--size));
+    height: var(--size);
+
+    transform: scaleX(-1);
 }
 
 .workExperience {
@@ -44,6 +63,7 @@
     padding-top: 1vmin;
     padding-bottom: 1vmin;
     padding-left: 3vmin; 
+    padding-right: 3vmin;
 
     font-size: 1.6vmax;
     font-style: none;
@@ -60,17 +80,24 @@
 }
 
 .jobDate {
-    padding-top: 1vmin;
-    padding-left: 3vmin;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1.5rem;
 
     color: var(--foreground);
+    font-size: 1.3vmax;
     font-style: italic;
 }
 
 .jobDescriptionText {
+    padding-left: 1.75rem;
+    
     color: var(--foreground);
+    font-size: 1.3vmax;
+    line-height: 3vmax;
 
     overflow-y: scroll;
     scrollbar-color: var(--foreground) transparent;
     scrollbar-width: thin;
+
 }
