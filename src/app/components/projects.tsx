@@ -30,7 +30,7 @@ function ProjectWidget({href, imageSrc, altText="", widgetTitle, widgetDescripti
     );
 }
 
-export function Projects() {
+export function ProjectsBlock() {
     type Project = {
         link: string;
         image: StaticImageData;

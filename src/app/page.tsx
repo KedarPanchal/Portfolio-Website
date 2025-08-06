@@ -4,9 +4,9 @@ import styles from "./page.module.css";
 
 import { Toolbar } from "./components/toolbar";
 import { AboutMeBlock } from "./components/aboutme";
-import { ChatbotBlock } from "./components/chatbot";
-import { Projects } from "./components/projects";
 import { WorkExperienceBlock } from "./components/workexperience";
+import { ChatbotBlock } from "./components/chatbot";
+import { ProjectsBlock } from "./components/projects";
 
 import { useRef } from "react";
 
@@ -29,7 +29,7 @@ export default function Home() {
         <WorkExperienceBlock />
       </section>
       <section id="projects">
-        <Projects />
+        <ProjectsBlock />
       </section>
       <section id="certifications">
       
