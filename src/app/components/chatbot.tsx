@@ -6,6 +6,20 @@ export function ChatbotBlock() {
     const [chatbotQuestion, setChatbotQuestion] = useState((<p>{defaultString}</p>));
     const [chatbotMessage, setChatbotMessage] = useState("");
 
+    const generationIndicators = [
+        "Thinking...",
+        "Generating...",
+        "Reviewing Kedar's experience...",
+        "Scanning experience for context...",
+        "Fetching resume insights...",
+        "Analyzing your question...",
+        "Identifying relevant information...",
+        "Consulting vector store...",
+        "Querying knowledge base...",
+        "Evaluating embeddings...",
+        "Pursuing relevant highlights...",
+    ];
+
     async function getMessage(event: FormEvent<HTMLFormElement>) { 
         event.preventDefault();
         const formData = new FormData(event.currentTarget);
@@ -13,7 +27,7 @@ export function ChatbotBlock() {
         if (formData.get("question")) {
             setChatbotQuestion((<p><b>You Asked: </b>{formData.get("question")! as string}</p>));
 
-            setChatbotMessage("Thinking...");
+            setChatbotMessage(generationIndicators[Math.floor(Math.random() * generationIndicators.length)]);
             const response = await fetch("/api/query", {
                 method: "POST",
                 body: formData.get("question"),
