@@ -93,7 +93,7 @@
     border-bottom-right-radius: var(--radius);
 
     color: var(--foreground);
-    font-size: 1.6vmax;
+    font-size: 1.3vmax;
     text-align: left;
     text-overflow: wrap;
     line-height: 25px;
