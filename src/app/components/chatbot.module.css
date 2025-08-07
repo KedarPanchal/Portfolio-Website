@@ -86,6 +86,8 @@
     padding-right: 1rem;
     padding-left: 1rem;
 
+    background-color: transparent;
+
     border: solid var(--foreground);
     border-bottom-left-radius: var(--radius);
     border-bottom-right-radius: var(--radius);

@@ -21,7 +21,7 @@
     flex-direction: row;
     align-items: center;
 
-    background-color: var(--background-light);
+    background-color: transparent;
 
     width: calc(var(--size) - 0.3vmin);
     height: calc(var(--size)/3 - 0.3vmin);
@@ -56,7 +56,7 @@
 
     overflow: hidden;
 
-    background-color: var(--background-light);
+    background-color: transparent;
 
     border: solid var(--foreground);
     border-width: 0 0.3vmin 0.3vmin 0.3vmin;

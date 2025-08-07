@@ -19,7 +19,7 @@
     width: 100%;
     height: 100%;
 
-    background-color: var(--background-light);
+    background-color: transparent;
 
     border: solid var(--foreground);
     border-radius: 10px;

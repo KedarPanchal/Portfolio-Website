@@ -108,7 +108,7 @@
     width: var(--size);
     height: calc(2 * var(--size)/3);
 
-    background-color: var(--background-light);
+    background-color: transparent;
 
     border: solid var(--foreground);
     border-width: 0.2vmin;
