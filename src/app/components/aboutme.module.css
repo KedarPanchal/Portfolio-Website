@@ -93,7 +93,6 @@
     place-items: center;
     gap: 1vmin;
 
-    margin-right: 5vw;
 
     width: 80%;
     height: 80%;
@@ -169,8 +168,11 @@
         grid-row: 3;
         grid-column: 1/-1;
         align-self: center;
+        justify-self: stretch;
 
         gap: 1vmin;
+
+        width: 100%;
 
         margin-bottom: 8vh;
     }
