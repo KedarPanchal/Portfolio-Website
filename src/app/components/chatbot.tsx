@@ -9,6 +9,10 @@ export function ChatbotBlock() {
     async function getMessage(formData: FormData) { 
         if (formData.get("question")) {
             setChatbotQuestion((<p><b>You Asked: </b>{formData.get("question")! as string}</p>));
+            
+            setChatbotMessage("Thinking...");
+            await new Promise((timeout) => setTimeout(timeout, 0));
+
             const response = await fetch("/api/query", {
                 method: "POST",
                 body: formData.get("question"),
