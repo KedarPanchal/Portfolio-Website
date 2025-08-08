@@ -15,7 +15,9 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Kedar Panchal",
-  description: "My portfolio site!",
+  description: "The portfolio website for Kedar Panchal, a software developer, AI/ML engineer, and Computer Science and Engineering Honors student at Texas A&M.",
+  robots: "index, follow, noimageindex",
+  generator: "Next.js",
 };
 
 export default function RootLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
