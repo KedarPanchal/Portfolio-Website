@@ -6,7 +6,7 @@ import Image, { StaticImageData } from "next/image";
 import githubLogo from "../../public/images/logos/githublogo.png";
 import huggingfaceLogo from "../../public/images/logos/huggingfacelogo.png";
 import gimpLogo from "../../public/images/logos/gimplogo.png";
-import colabLogo from "../../public/images/logos/colablogo.webp";
+import colabLogo from "../../public/images/logos/colablogo.png";
 import nextLogo from "../../public/images/logos/nextlogo.png";
 
 interface ProjectWidgetProps {
