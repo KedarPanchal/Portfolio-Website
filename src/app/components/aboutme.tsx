@@ -76,7 +76,7 @@ export function AboutMeBlock() {
             </div>
             <p className={styles.aboutMeText}>
                 Hi, I&#39;m <span className={styles.name}>Kedar Panchal</span>, a Computer Science and Engineering Honors student at Texas A&M with a passion for artificial intelligence and its potential to create innovative solutions.
-                Feel free to scroll down to interact with an <b>AI assistant</b> to learn about my projects, skills, work experience, and more, or <b>explore my website further</b> to view this information in-depth.
+                Feel free to scroll down to interact with an <b>agentic AI assistant</b>, or <b>explore my website further</b>, to learn about my projects, skills, work experience, and more.
             </p>
             <div className={styles.skillsBlock}>
                 {skillsArray.map((skill, i, arr) => {
