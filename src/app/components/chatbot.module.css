@@ -11,7 +11,7 @@
 
 .chatbotInputForm {
     display: grid;
-    grid-template-columns: 15fr 1fr;
+    grid-template-columns: 1fr auto;
     grid-template-rows: auto;
 
     grid-row: 1;
@@ -61,14 +61,18 @@
     border: solid var(--foreground);
     border-top-right-radius: var(--radius);
     
-    font-size: min(3vmin, 30px);
+    font-size: 2vmax;
     color: var(--background);
     font-family: "Monaco", monospace;
     text-align: center;
-    padding-bottom: 0.3vmax;
+    padding: 0 2vmax 0.3vmax;
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+.chatbotInputButton:hover {
+    cursor: pointer;
 }
 
 .chatbotOutput {
