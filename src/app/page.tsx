@@ -20,7 +20,7 @@ env.allowLocalModels = true;
 
 function ScrollArrow() {
   return (
-      <Image src={scrollArrow} alt="" className={styles.scrollArrowImage} />
+      <Image src={scrollArrow} alt="" className={styles.scrollArrow} />
   );
 }
 
