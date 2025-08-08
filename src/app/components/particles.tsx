@@ -6,14 +6,15 @@ import { Particles } from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
 
 import { useCallback } from "react";
+import { Container, Engine } from "tsparticles-engine";
 
 export function ParticleBG() {
-    const initParticles = useCallback(async (engine) => {
+    const initParticles = useCallback(async (engine: Engine) => {
         console.log(engine);
         await loadSlim(engine);
     }, []);
 
-    const loadedParticles = useCallback(async (container) => {
+    const loadedParticles = useCallback(async (container: Container | undefined) => {
         await console.log(container);
     }, []);
 
@@ -43,7 +44,6 @@ export function ParticleBG() {
                 particles: {
                     color: {
                         value: "#04d9ff",
-                        opacity: 0.25,
                     },
                     links: {
                         color: "#04d9ff",
