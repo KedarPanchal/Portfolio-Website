@@ -7,9 +7,11 @@
 }
 
 .page > section {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
 
     width: auto;
     height: 100vh;
@@ -17,4 +19,15 @@
     padding-top: 18vh;
 
     scroll-snap-align: start;
+}
+
+.scrollArrowImage {
+    position: relative;
+    z-index: 10;
+    bottom: 3vh;
+
+    width: calc(160 * var(--size)/192);
+    height: var(--size);
+
+    --size: 3vmax;
 }
