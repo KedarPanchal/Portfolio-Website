@@ -68,7 +68,7 @@ export function ProjectsBlock() {
             link: "https://github.com/KedarPanchal/Portfolio-Website",
             image: nextLogo,
             title: "Kedar's Portfolio Site",
-            description: "A Next.js and React portfolio website with an integrated, RAG-powered AI Assistant powered by Llama3‑70b and langchain.js.",
+            description: "A Next.js and React portfolio website integrating an agentic, RAG-powered AI Assistant.",
         },
         {
             link: "https://github.com/KedarPanchal/LSPP",
