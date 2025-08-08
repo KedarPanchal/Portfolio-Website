@@ -43,26 +43,26 @@ export function ProjectsBlock() {
         {
             link: "https://colab.research.google.com/github/KedarPanchal/Breast-Cancer-Detector/blob/main/tumor_detector.ipynb", 
             image: colabLogo, 
-            title: "EfficientNet‑B1 Breast Cancer Detection Fine‑Tune",
-            description: "A Jupyter notebook for quickly fine‑tuning EfficientNet‑B1 to classify breast tumors in ultrasounds as malignant or benign."
+            title: "EfficientNet‑B1 Cancer Detection Fine‑Tune",
+            description: "A fine‑tune of EfficientNet‑B1 to classify ultrasound breast tumors as malignant or benign."
         },
         {
             link: "https://huggingface.co/KedarPanchal/flan-t5-small-summary-finetune", 
             image: huggingfaceLogo, 
             title: "FLAN‑T5‑Small Summarization Fine‑Tune",
-            description: "A fine‑tuned Flan‑T5‑small model trained with LoRA on research paper abstracts to generate summaries using Hugging Face Transformers.",
+            description: "A LoRA fine‑tuned Flan‑T5‑Small model trained on research paper abstracts to generate summaries.",
         },
         {
             link: "https://github.com/KedarPanchal/GIMP-AI-Inpainting",
             image: gimpLogo,
             title: "GIMP AI Inpainting Plug‑In",
-            description: "An AI Inpainting plug‑in for GIMP 3.0 that allows users to locally leverage powerful AI tools like Stable Diffusion XL to upgrade their image‑editing workflow.",
+            description: "A local AI Inpainting plug‑in for GIMP 3.0 using Stable Diffusion XL to upgrade its image‑editing workflow.",
         },
         {
             link: "https://github.com/Sinistral-Synths/Whiplash",
             image: githubLogo,
             title: "Whiplash Harsh Noise Synthesizer",
-            description: "A VST3-compatible harsh noise synth featuring an Attack-Decay-Sustain-Release envelope, pitch modulation, and five distortion effects.",
+            description: "A VST3 harsh noise synth featuring an ADSR envelope, pitch modulation, and five distortion effects.",
         },
         {
             link: "https://github.com/KedarPanchal/Portfolio-Website",
@@ -74,7 +74,7 @@ export function ProjectsBlock() {
             link: "https://github.com/KedarPanchal/LSPP",
             image: githubLogo,
             title: "lspp (ls++) CLI Tool",
-            description: "An improved form of the ls command that lists files in a tree-style structure. Built with Java and Maven and compiled to run natively with GraalVM.",
+            description: "An improved ls command with personalization features that lists files in a tree-style structure.",
         }
     ];
     return (

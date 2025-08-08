@@ -124,10 +124,9 @@ export function WorkExperienceBlock() {
                 endYear: 2024,
             },
             description: [
-                "Conducted research at the University of Texas at Austin RobIn Interactive Intelligence Lab",
-                "Trained novel BaRiFlex robotic arm design using reinforcement machine learning techniques in performing grasping tasks",
-                "Assembled and soldered 3-D printed robot apparatus used for collecting training data",
-                "Programmed Bash scripts to automate recording sensor data as Robot Operating System Bags for storage and later use",
+                "Researched at the University of Texas at Austin RobIn Interactive Intelligence Lab",
+                "Trained novel BaRiFlex robotic arm with reinforcement machine learning techniques to perform grasping tasks",
+                "Programmed Bash scripts to automate recording sensor data as Robot Operating System Bags",
                 "Developed Python scripts to translate ROS bags to AI-friendly HDF5 archives",
                 "Designed Docker containers for cross-platform development using Linux-exclusive software",
             ],

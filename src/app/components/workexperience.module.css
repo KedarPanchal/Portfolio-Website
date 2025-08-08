@@ -65,7 +65,7 @@
     padding-left: 3vmin; 
     padding-right: 3vmin;
 
-    font-size: 1.6vmax;
+    font-size: 1.75vmax;
     font-style: none;
     font-weight: inherit;
 }
@@ -93,7 +93,7 @@
     padding-left: 1.75rem;
     
     color: var(--foreground);
-    font-size: 1.3vmax;
+    font-size: 1.6vmax;
     line-height: 3vmax;
 
     overflow-y: scroll;
