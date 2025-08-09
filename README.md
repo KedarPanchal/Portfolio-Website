@@ -21,9 +21,9 @@ Welcome to my personal portfolio! This site showcases my projects, experience, a
 ## Tech Stack
 [Back to top](#table-of-contents)
 
-<div style="display: flex; justify-content: center;">
+<p align="center">
     <img src="resources/tech_stack.png" />
-</div>
+</p>
 
 * **Frontend**:
     * [React](https://react.dev/)
