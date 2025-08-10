@@ -5,12 +5,30 @@ import styles from "./toolbar.module.css";
 import { useRef, useEffect } from "react";
 import { RefObject } from "react";
 
+type IntersectionFunction = (target: HTMLAnchorElement) => void;
+type NavigationKey = "about" | "chatbot" | "experience" | "projects" | "certifications";
+type NavigationRefs = Record<NavigationKey, RefObject<HTMLAnchorElement | null>>;
+export function scrollObserver(root: HTMLDivElement | null, navigationRefs: NavigationRefs, intersectionFunction: IntersectionFunction, nonintersectionFunction: IntersectionFunction) {
+    return new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            const scrollTarget = navigationRefs[entry.target.id as NavigationKey].current!;
+            if (entry.isIntersecting) {
+                intersectionFunction(scrollTarget);
+            } else {
+                nonintersectionFunction(scrollTarget);
+            }
+        });
+    }, {
+        threshold: 0.95,
+        root: root,
+    });
+}
+
 interface ToolbarProps {
     root: RefObject<HTMLDivElement|null>
 }
 export function Toolbar({root}: ToolbarProps) {
-    type ToolbarKey = "about" | "chatbot" | "experience" | "projects" | "certifications";
-    const toolbarRefs: Record<ToolbarKey, RefObject<HTMLAnchorElement|null>> = {
+    const toolbarRefs: NavigationRefs = {
         about: useRef<HTMLAnchorElement>(null),
         chatbot: useRef<HTMLAnchorElement>(null),
         experience: useRef<HTMLAnchorElement>(null),
@@ -19,21 +37,14 @@ export function Toolbar({root}: ToolbarProps) {
     }
 
     useEffect(() => {
-        const menuObserver = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    toolbarRefs[entry.target.id as ToolbarKey].current!.scrollIntoView({
-                        behavior: "smooth",
-                        inline: "center",
-                    });
-                    toolbarRefs[entry.target.id as ToolbarKey].current!.style.fontWeight = "normal";
-                } else {
-                    toolbarRefs[entry.target.id as ToolbarKey].current!.style.fontWeight = "lighter";
-                }
-            })
-        }, {
-            threshold: 0.95,
-            root: root.current,
+        const menuObserver = scrollObserver(root.current, toolbarRefs, (target) => {
+            target.scrollIntoView({
+                behavior: "smooth",
+                inline: "center",
+            });
+            target.style.fontWeight = "normal";
+        }, (target) => {
+            target.style.fontWeight = "lighter";
         });
 
         root.current!.querySelectorAll("section").forEach((section) => menuObserver.observe(section));
