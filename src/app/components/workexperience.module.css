@@ -80,9 +80,7 @@
 }
 
 .jobDate {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    padding-left: 1.5rem;
+    padding: 1rem 0 1rem 1.5rem;
 
     color: var(--foreground);
     font-size: 1.3vmax;
@@ -90,7 +88,7 @@
 }
 
 .jobDescriptionText {
-    padding-left: 1.75rem;
+    padding: 0 3vmin 0 5.5vmin;
     
     color: var(--foreground);
     font-size: 1.6vmax;
