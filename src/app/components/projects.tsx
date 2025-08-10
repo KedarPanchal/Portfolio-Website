@@ -3,6 +3,7 @@ import styles from "./projects.module.css";
 import Link from "next/link";
 import Image, { StaticImageData } from "next/image";
 
+import link from "../../public/images/link.png";
 import githubLogo from "../../public/images/logos/githublogo.png";
 import huggingfaceLogo from "../../public/images/logos/huggingfacelogo.png";
 import gimpLogo from "../../public/images/logos/gimplogo.png";
@@ -21,7 +22,7 @@ function ProjectWidget({href, imageSrc, altText="", widgetTitle, widgetDescripti
         <Link href={href} target="_blank" className={styles.widgetBlock}>
             <div className={styles.widgetTop}>
                 <Image src={imageSrc} alt={altText} className={styles.widgetImage}/>
-                <h1 className={styles.widgetTitle}>{widgetTitle}</h1>
+                <h1 className={styles.widgetTitle}>{widgetTitle} <span className={styles.widgetLink}><Image src={link} alt="" className={styles.widgetLinkImage} /></span></h1>
             </div>
             <div className={styles.widgetBottom}>
                 <p className={styles.widgetDescription}>{widgetDescription}</p>

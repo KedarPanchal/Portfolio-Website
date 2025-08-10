@@ -46,9 +46,21 @@
 .widgetTitle {
     padding: 0.75vw;
 
-    font-size: 1.75vmax;
+    font-size: 1.65vmax;
     font-weight: normal;
     color: var(--foreground);
+}
+
+.widgetLink {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.widgetLinkImage {
+
+    width: 1.6vmax;
+    height: 1.6vmax;
+    vertical-align: top;
 }
 
 .widgetBottom {
@@ -69,6 +81,20 @@
 
     color: var(--foreground);
     font-size: 1.6vmax;
+}
+
+.widgetBlock:hover > * > h1 {
+    color: var(--highlight);
+}
+
+.widgetBlock:hover > .widgetTop {
+    border: solid var(--highlight);
+    border-width: 0.3vmin 0.3vmin 0 0.3vmin;
+}
+
+.widgetBlock:hover > .widgetBottom {
+    border: solid var(--highlight);
+    border-width: 0 0.3vmin 0.3vmin 0.3vmin;
 }
 
 @media only screen and (max-width: 1050px) {
