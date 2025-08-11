@@ -16,7 +16,7 @@ export type NavigationRefs = Record<NavigationKey, NavigationContent>;
 export function scrollObserver(root: HTMLElement | null, navigationRefs: NavigationRefs, intersectionFunction: IntersectionFunction, nonintersectionFunction: IntersectionFunction) {
     return new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
-            const scrollTarget = navigationRefs[entry.target.id as NavigationKey].ref.current!;
+            const scrollTarget = navigationRefs[entry.target.id.replace("toolbar_", "") as NavigationKey].ref.current!;
             if (entry.isIntersecting) {
                 intersectionFunction(scrollTarget);
             } else {

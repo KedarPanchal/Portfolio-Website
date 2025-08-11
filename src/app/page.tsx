@@ -11,7 +11,8 @@ import { ProjectsBlock } from "./components/projects";
 import { CertificationsBlock } from "./components/certifications";
 
 import Image from "next/image";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
+import useWindowWidth from "./hooks/windowwidth";
 import { env } from "@xenova/transformers";
 
 import scrollArrow from "../public/images/scrollarrow.png";
@@ -25,6 +26,7 @@ function ScrollArrow() {
 }
 
 export default function Home() {
+  const width = useWindowWidth();
   const mainPageRef = useRef<HTMLDivElement>(null);
   const toolbarRef = useRef<HTMLElement>(null);
 
@@ -50,6 +52,20 @@ export default function Home() {
       ref: useRef<HTMLElement>(null),
     },
   }
+
+  useEffect(() => {
+    const pageObserver = scrollObserver(toolbarRef.current, sectionRefs, (target) => {
+      if (width <= 500) {
+        target.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
+      }
+    }, (target) => {});
+
+    toolbarRef.current!.querySelectorAll("span").forEach((span) => pageObserver.observe(span));
+    return () => pageObserver.disconnect();
+  }, [width]);
 
   return (
     <div className={styles.page} ref={mainPageRef}>
