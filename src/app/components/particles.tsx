@@ -11,7 +11,6 @@ import { loadSlim } from "tsparticles-slim";
 
 export function ParticleBG() {
     const initParticles = useCallback(async (engine: Engine) => {
-        console.log(engine);
         await loadSlim(engine);
     }, []);
 
