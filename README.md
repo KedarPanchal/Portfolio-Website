@@ -13,10 +13,12 @@ Welcome to my personal portfolio! This site showcases my projects, experience, a
 [Back to top](#table-of-contents)
 
 * Responsive user interface for multiple platforms
-* Dynamic mobile navigation bar
+* Dynamic mobile navigation bar that allows for smooth scrolling between page sections
 * RAG-powered, agentic AI chatbot to discuss my work experience, projects, skills, and more
     * Orchestrates local and cloud-based models for a smooth generative AI pipeline
+* Smooth transitions between page sections
 * Interactive particle effects in the background
+* Functional design through use of custom React hooks
 
 ## Tech Stack
 [Back to top](#table-of-contents)
