@@ -1,5 +1,7 @@
 import styles from "./aboutme.module.css";
 
+import { CSSProperties } from "react";
+
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 
@@ -15,8 +17,6 @@ import nextLogo from "../../public/images/logos/nextlogo.png";
 import sklearnLogo from "../../public/images/logos/sklearnlogo.png";
 import kerasLogo from "../../public/images/logos/keraslogo.png";
 import dockerLogo from "../../public/images/logos/dockerlogo.png";
-
-import { CSSProperties } from "react";
 
 interface ContactInfoWidgetProps {
     href: string,

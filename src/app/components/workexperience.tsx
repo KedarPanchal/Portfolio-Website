@@ -3,7 +3,9 @@
 import styles from "./workexperience.module.css";
 
 import { useReducer } from "react";
+
 import Image from "next/image";
+
 import arrowHead from "../../public/images/arrowhead.png";
 
 type Month = "Jan" | "Feb" | "Mar" | "Apr" | "May" | "Jun" | "Jul" | "Aug" | "Sep" | "Oct" | "Nov" | "Dec";

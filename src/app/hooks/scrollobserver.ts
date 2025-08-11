@@ -1,5 +1,5 @@
-import { DependencyList, RefObject } from "react";
 import { useEffect } from "react";
+import { DependencyList, RefObject } from "react";
 
 export type NavigationKey = "about" | "chatbot" | "experience" | "projects" | "certifications";
 export type NavigationRefs = Record<NavigationKey, RefObject<HTMLElement|null>>;

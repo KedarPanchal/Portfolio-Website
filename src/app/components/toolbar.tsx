@@ -1,9 +1,11 @@
 "use client";
 
-import Link from "next/link";
 import styles from "./toolbar.module.css";
+
 import { useRef } from "react";
 import { RefObject } from "react";
+
+import Link from "next/link";
 
 import { useScrollObserver } from "../hooks/scrollobserver";
 import { NavigationRefs, NavigationKey } from "../hooks/scrollobserver";

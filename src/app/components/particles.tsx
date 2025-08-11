@@ -2,11 +2,12 @@
 
 import styles from "./particles.module.css";
 
+import { useCallback } from "react";
+
 import { Particles } from "react-tsparticles";
+import { Container, Engine } from "tsparticles-engine";
 import { loadSlim } from "tsparticles-slim";
 
-import { useCallback } from "react";
-import { Container, Engine } from "tsparticles-engine";
 
 export function ParticleBG() {
     const initParticles = useCallback(async (engine: Engine) => {

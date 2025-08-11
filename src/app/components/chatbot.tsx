@@ -1,5 +1,8 @@
 import styles from "./chatbot.module.css";
-import { FormEvent, useState } from "react";
+
+import { useState } from "react";
+
+import { FormEvent } from "react";
 
 export function ChatbotBlock() {
     const defaultString = "I'm Kedar's AI assistant, ready to talk about his resume and work experience. Let me know how I can help!";

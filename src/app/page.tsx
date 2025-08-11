@@ -2,21 +2,25 @@
 
 import styles from "./page.module.css";
 
+import { useRef } from "react";
+import { JSX } from "react";
+
+import Image from "next/image";
+
 import { ParticleBG } from "./components/particles";
+
+import { env } from "@xenova/transformers";
+
+import { useWindowWidth } from "./hooks/windowwidth";
+import { useScrollObserver } from "./hooks/scrollobserver";
+import { NavigationKey, NavigationRefs } from "./hooks/scrollobserver";
+
 import { Toolbar } from "./components/toolbar";
 import { AboutMeBlock } from "./components/aboutme";
 import { WorkExperienceBlock } from "./components/workexperience";
 import { ChatbotBlock } from "./components/chatbot";
 import { ProjectsBlock } from "./components/projects";
 import { CertificationsBlock } from "./components/certifications";
-
-import Image from "next/image";
-import { JSX } from "react";
-import { useRef } from "react";
-import { useWindowWidth } from "./hooks/windowwidth";
-import { useScrollObserver } from "./hooks/scrollobserver";
-import { NavigationKey, NavigationRefs } from "./hooks/scrollobserver";
-import { env } from "@xenova/transformers";
 
 import scrollArrow from "../public/images/scrollarrow.png";
 

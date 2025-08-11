@@ -2,11 +2,12 @@ import styles from "./certifications.module.css";
 
 import Image, { StaticImageData } from "next/image";
 
+import { CSSProperties } from "react";
+
 import microsoftLogo from "../../public/images/logos/microsoftlogo.png";
 import deepLearningAILogo from "../../public/images/logos/deeplearningailogo.png";
 import javaLogo from "../../public/images/logos/javalogo.png";
 import pythonLogo from "../../public/images/logos/pythonlogo.png";
-import { CSSProperties } from "react";
 
 interface CertificationWidgetProps {
     imageSrc: StaticImageData,

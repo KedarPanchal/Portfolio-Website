@@ -1,18 +1,20 @@
-import { DirectoryLoader } from "langchain/document_loaders/fs/directory";
 import path from "path";
+
+import { NextResponse } from "next/server";
+
+import { ChatPromptTemplate } from "@langchain/core/prompts";
+import type { Document } from "@langchain/core/documents";
+import { RunnablePassthrough, RunnableSequence } from "@langchain/core/runnables";
+import { StringOutputParser } from "@langchain/core/output_parsers";
+import { ConsoleCallbackHandler } from "@langchain/core/tracers/console";
+import { ChatGroq } from "@langchain/groq";
+
+import { DirectoryLoader } from "langchain/document_loaders/fs/directory";
 import { TextLoader } from "langchain/document_loaders/fs/text";
 import { RecursiveCharacterTextSplitter } from "@langchain/textsplitters";
 import { MemoryVectorStore } from "langchain/vectorstores/memory";
 
-import { ChatGroq } from "@langchain/groq";
-import { ChatPromptTemplate } from "@langchain/core/prompts";
 import { pipeline } from "@xenova/transformers";
-import { RunnablePassthrough, RunnableSequence } from "@langchain/core/runnables";
-import type { Document } from "@langchain/core/documents";
-import { StringOutputParser } from "@langchain/core/output_parsers";
-import { ConsoleCallbackHandler } from "@langchain/core/tracers/console";
-
-import { NextResponse } from "next/server";
 
 // Code to set up export
 async function getEmbeddings(documents: Array<string>) {
