@@ -5,10 +5,10 @@ import styles from "./toolbar.module.css";
 import { useRef, useEffect } from "react";
 import { RefObject } from "react";
 
-type IntersectionFunction = (target: HTMLAnchorElement) => void;
+type IntersectionFunction = (target: HTMLElement) => void;
 type NavigationKey = "about" | "chatbot" | "experience" | "projects" | "certifications";
-type NavigationRefs = Record<NavigationKey, RefObject<HTMLAnchorElement | null>>;
-export function scrollObserver(root: HTMLDivElement | null, navigationRefs: NavigationRefs, intersectionFunction: IntersectionFunction, nonintersectionFunction: IntersectionFunction) {
+export type NavigationRefs = Record<NavigationKey, RefObject<HTMLElement | null>>;
+export function scrollObserver(root: HTMLElement | null, navigationRefs: NavigationRefs, intersectionFunction: IntersectionFunction, nonintersectionFunction: IntersectionFunction) {
     return new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             const scrollTarget = navigationRefs[entry.target.id as NavigationKey].current!;
@@ -25,9 +25,10 @@ export function scrollObserver(root: HTMLDivElement | null, navigationRefs: Navi
 }
 
 interface ToolbarProps {
-    root: RefObject<HTMLDivElement|null>
+    root: RefObject<HTMLDivElement|null>,
+    ref: RefObject<HTMLElement|null>,
 }
-export function Toolbar({root}: ToolbarProps) {
+export function Toolbar({root, ref}: ToolbarProps) {
     const toolbarRefs: NavigationRefs = {
         about: useRef<HTMLAnchorElement>(null),
         chatbot: useRef<HTMLAnchorElement>(null),
@@ -50,23 +51,23 @@ export function Toolbar({root}: ToolbarProps) {
         root.current!.querySelectorAll("section").forEach((section) => menuObserver.observe(section));
         return () => menuObserver.disconnect();
     });
-    
+
     return (
-        <nav className={styles.toolbar}>
-            <span>
-                <Link href="#about" ref={toolbarRefs["about"]} style={{ textDecoration: "none" }}>Kedar Panchal</Link>
+        <nav className={styles.toolbar} ref={ref}>
+            <span ref={toolbarRefs["about"]}>
+                <Link href="#about" style={{ textDecoration: "none" }}>Kedar Panchal</Link>
             </span>
-            <span>
-                <Link href="#chatbot" ref={toolbarRefs["chatbot"]} style={{ textDecoration: "none" }}>AI Assistant</Link>
+            <span ref={toolbarRefs["chatbot"]}>
+                <Link href="#chatbot" style={{ textDecoration: "none" }}>AI Assistant</Link>
             </span>
-            <span>
-                <Link href="#experience" ref={toolbarRefs["experience"]} style={{ textDecoration: "none" }}>Experience</Link>
+            <span ref={toolbarRefs["experience"]}>
+                <Link href="#experience" style={{ textDecoration: "none" }}>Experience</Link>
             </span>
-            <span>
-                <Link href="#projects" ref={toolbarRefs["projects"]} style={{ textDecoration: "none" }}>Projects</Link>
+            <span ref={toolbarRefs["projects"]}>
+                <Link href="#projects" style={{ textDecoration: "none" }}>Projects</Link>
             </span>
-            <span>
-                <Link href="#certifications" ref={toolbarRefs["certifications"]} style={{ textDecoration: "none" }}>Certifications</Link>
+            <span ref={toolbarRefs["certifications"]}>
+                <Link href="#certifications" style={{ textDecoration: "none" }}>Certifications</Link>
             </span>
         </nav>  
     );
