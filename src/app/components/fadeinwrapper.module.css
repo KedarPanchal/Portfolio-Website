@@ -1,0 +1,10 @@
+.fadeInBlock {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 2.5s ease-out;
+}
+
+.isVisible {
+    opacity: 1;
+    visibility: visible;
+}

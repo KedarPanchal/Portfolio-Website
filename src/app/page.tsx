@@ -15,6 +15,7 @@ import { useWindowWidth } from "./hooks/windowwidth";
 import { useScrollObserver } from "./hooks/scrollobserver";
 import { NavigationKey, NavigationRefs } from "./hooks/scrollobserver";
 
+import { FadeInWrapper } from "./components/fadeinwrapper";
 import { Toolbar } from "./components/toolbar";
 import { AboutMeBlock } from "./components/aboutme";
 import { WorkExperienceBlock } from "./components/workexperience";
@@ -75,12 +76,13 @@ export default function Home() {
       <ParticleBG />
       <Toolbar root={mainPageRef} ref={toolbarRef} />
       {Object.keys(sectionRefs).map((id) => {
-        return (
-          <section id={id} ref={sectionRefs[id as NavigationKey]} key={id}>
+        const section = (
+          <section id={id} ref={sectionRefs[id as NavigationKey]}>
             {sectionContent[id as NavigationKey]}
             {id != Object.keys(sectionRefs)[Object.keys(sectionRefs).length - 1] ? <ScrollArrow /> : <></>}
           </section>
         );
+        return <FadeInWrapper root={mainPageRef} children={section} key={id} />
       })}
     </div>
   );

@@ -11,8 +11,8 @@ import { useScrollObserver } from "../hooks/scrollobserver";
 import { NavigationRefs, NavigationKey } from "../hooks/scrollobserver";
 
 interface ToolbarProps {
-    root: RefObject<HTMLDivElement|null>,
-    ref: RefObject<HTMLElement|null>,
+    root: RefObject<HTMLDivElement | null>,
+    ref: RefObject<HTMLElement | null>,
 }
 export function Toolbar({root, ref}: ToolbarProps) {
     const toolbarRefs: NavigationRefs = {

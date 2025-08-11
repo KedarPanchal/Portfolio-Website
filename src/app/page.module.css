@@ -6,7 +6,7 @@
     height: 100vh;
 }
 
-.page > section {
+.page > * > section {
     position: relative;
     display: flex;
     flex-direction: column;
