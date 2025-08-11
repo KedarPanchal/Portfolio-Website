@@ -2,7 +2,7 @@
 
 import styles from "./workexperience.module.css";
 
-import { useState } from "react";
+import { useReducer } from "react";
 import Image from "next/image";
 import arrowHead from "../../public/images/arrowhead.png";
 
@@ -37,9 +37,29 @@ function WorkExperienceWidget({jobName, workplaceName, date, description}: WorkE
     );
 }
 
-export function WorkExperienceBlock() {
-    const [experienceIndex, setExperienceIndex] = useState(0);
+type State = {
+    index: number,
+    maxLength: number,
+}
+type Action = {
+    type: "increment" | "decrement",
+}
+function changeExperienceIndex(state: State, action: Action) {
+    switch (action.type) {
+        case "increment":
+            return {
+                index: state.index < state.maxLength - 1 ? state.index + 1 : 0,
+                maxLength: state.maxLength,
+            };
+        case "decrement":
+            return {
+                index: state.index > 0 ? state.index - 1 : state.maxLength - 1,
+                maxLength: state.maxLength,
+            };
+    }
+}
 
+export function WorkExperienceBlock() {
     type Job = {
         name: string,
         workplace: string,
@@ -177,29 +197,16 @@ export function WorkExperienceBlock() {
         />
     });
 
-    const incrementExperienceIndex = () => {
-        if (experienceIndex < workExperienceArr.length - 1) {
-            setExperienceIndex(experienceIndex + 1);
-        } else {
-            setExperienceIndex(0);
-        }
-    }
+    const [experienceState, dispatch] = useReducer(changeExperienceIndex, {index: 0, maxLength: jobs.length});
 
-    const decrementExperienceIndex = () => {
-        if (experienceIndex > 0) {
-            setExperienceIndex(experienceIndex - 1);
-        } else {
-            setExperienceIndex(workExperienceArr.length - 1);
-        }
-    }
 
     return (
         <div className={styles.workExperienceBlock}>
-            <button className={styles.navButton} onClick={decrementExperienceIndex}>
+            <button className={styles.navButton} onClick={() => dispatch({type: "decrement"})}>
                 <Image src={arrowHead} alt="" className={styles.navButtonLeftArrow} />
             </button>
-                {workExperienceArr[experienceIndex]}
-            <button className={styles.navButton} onClick={incrementExperienceIndex}>
+                {workExperienceArr[experienceState.index]}
+            <button className={styles.navButton} onClick={() => dispatch({type: "increment"})}>
                 <Image src={arrowHead} alt="" className={styles.navButtonRightArrow} />
             </button>
         </div>
