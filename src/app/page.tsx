@@ -78,7 +78,7 @@ export default function Home() {
         return (
           <section id={id} ref={sectionRefs[id as NavigationKey]} key={id}>
             {sectionContent[id as NavigationKey]}
-            <ScrollArrow />
+            {id != Object.keys(sectionRefs)[Object.keys(sectionRefs).length - 1] ? <ScrollArrow /> : <></>}
           </section>
         );
       })}
