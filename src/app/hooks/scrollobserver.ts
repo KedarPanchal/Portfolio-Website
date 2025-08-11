@@ -7,7 +7,7 @@ type IntersectionFunctions = {
     intersect: (target: HTMLElement) => void,
     nonintersect?: (target: HTMLElement) => void,
 }
-export default function useScrollObserver(scrollTargetTag: string, root: RefObject<HTMLElement | null>, navigationRefs: NavigationRefs, intersectionFunctions: IntersectionFunctions, deps?: DependencyList) {
+export function useScrollObserver(scrollTargetTag: string, root: RefObject<HTMLElement | null>, navigationRefs: NavigationRefs, intersectionFunctions: IntersectionFunctions, deps?: DependencyList) {
     useEffect(() => {
         const scrollObserver = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {

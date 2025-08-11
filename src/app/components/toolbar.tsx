@@ -5,7 +5,8 @@ import styles from "./toolbar.module.css";
 import { useRef } from "react";
 import { RefObject } from "react";
 
-import useScrollObserver, { NavigationRefs, NavigationKey } from "../hooks/scrollobserver";
+import { useScrollObserver } from "../hooks/scrollobserver";
+import { NavigationRefs, NavigationKey } from "../hooks/scrollobserver";
 
 interface ToolbarProps {
     root: RefObject<HTMLDivElement|null>,

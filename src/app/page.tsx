@@ -13,8 +13,9 @@ import { CertificationsBlock } from "./components/certifications";
 import Image from "next/image";
 import { JSX } from "react";
 import { useRef } from "react";
-import useWindowWidth from "./hooks/windowwidth";
-import useScrollObserver, { NavigationKey } from "./hooks/scrollobserver";
+import { useWindowWidth } from "./hooks/windowwidth";
+import { useScrollObserver } from "./hooks/scrollobserver";
+import { NavigationKey, NavigationRefs } from "./hooks/scrollobserver";
 import { env } from "@xenova/transformers";
 
 import scrollArrow from "../public/images/scrollarrow.png";
@@ -32,7 +33,7 @@ export default function Home() {
   const mainPageRef = useRef<HTMLDivElement>(null);
   const toolbarRef = useRef<HTMLElement>(null);
 
-  const sectionRefs = {
+  const sectionRefs: NavigationRefs = {
     about: useRef<HTMLElement>(null),
     chatbot: useRef<HTMLElement>(null),
     experience: useRef<HTMLElement>(null),
