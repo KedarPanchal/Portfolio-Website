@@ -30,7 +30,7 @@ export function Toolbar({root, ref}: ToolbarProps) {
         projects: "Projects",
         certifications: "Certifications",
     }
-    console.log(root);
+
     useScrollObserver(
         "section",
         root, 

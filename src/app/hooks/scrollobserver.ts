@@ -22,7 +22,7 @@ export function useScrollObserver(scrollTargetTag: string, root: RefObject<HTMLE
             threshold: 0.95,
             root: root.current!,
         });
-
+        
         root.current!.querySelectorAll(scrollTargetTag).forEach((element) => scrollObserver.observe(element));
         return () => scrollObserver.disconnect();
     }, deps);

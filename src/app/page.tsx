@@ -79,10 +79,16 @@ export default function Home() {
         const section = (
           <section id={id} ref={sectionRefs[id as NavigationKey]}>
             {sectionContent[id as NavigationKey]}
-            {id != Object.keys(sectionRefs)[Object.keys(sectionRefs).length - 1] ? <ScrollArrow /> : <></>}
           </section>
         );
-        return <FadeInWrapper root={mainPageRef} key={id}>{section}</FadeInWrapper>
+        return (
+          <div className={styles.fadeInWrapperWrapper} key={id}>
+            <FadeInWrapper root={mainPageRef}>
+              {section}
+            </FadeInWrapper>
+            {id != Object.keys(sectionRefs)[Object.keys(sectionRefs).length - 1] ? <ScrollArrow /> : <></>}
+          </div>
+        );
       })}
     </div>
   );
