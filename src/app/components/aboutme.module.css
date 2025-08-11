@@ -9,22 +9,20 @@
 }
 
 .aboutMeImage {
+    --image-dim: 30vmin;
+
     grid-row: 1;
     grid-column: 1;
 
     width: var(--image-dim);
     height: var(--image-dim);
     
-    margin-left: 5vw;
     margin: auto 0 auto 5vw;
-    
-    object-fit: cover;
-    border-radius: 50%;
     
     border: solid var(--highlight);
     border-width: 4.8px;
-
-    --image-dim: 30vmin;
+    border-radius: 50%;
+    object-fit: cover;    
 }
 
 .contactInfo {
@@ -44,7 +42,6 @@
 .contactInfoWidget {
     display: flex;
     flex-direction: row;
-
     align-items: center;
 }
 
@@ -53,10 +50,10 @@
 }
 
 .contactInfoWidgetImage {
+    --size: 2.5vmin;
+
     width: var(--size);
     height: var(--size);
-
-    --size: 2.5vmin;
 }
 
 .contactInfoWidgetText {
@@ -80,8 +77,8 @@
 }
 
 .name {
-    font-weight: bold;
     color: var(--highlight);
+    font-weight: bold;
 }
 
 .skillsBlock {
@@ -93,12 +90,12 @@
     place-items: center;
     gap: 1vmin;
 
-
     width: 80%;
     height: 80%;
 }
 
 .skillWidget {
+    --size: 17vmin;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -113,7 +110,6 @@
     border-width: 0.2vmin;
     border-radius: 10px;
     
-    --size: 17vmin;
 }
 
 .skillImage {
@@ -159,9 +155,7 @@
         grid-column: 2;
         align-self: center;
 
-        padding-top: 0;
-        padding-left: 5vw;
-        padding-right: 5vw;
+        padding: 0 5vw 0;
     }
 
     .skillsBlock {
