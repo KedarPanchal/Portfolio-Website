@@ -3,7 +3,7 @@
 import styles from "./page.module.css";
 
 import { ParticleBG } from "./components/particles";
-import { Toolbar, scrollObserver, NavigationKey, NavigationRefs } from "./components/toolbar";
+import { Toolbar } from "./components/toolbar";
 import { AboutMeBlock } from "./components/aboutme";
 import { WorkExperienceBlock } from "./components/workexperience";
 import { ChatbotBlock } from "./components/chatbot";
@@ -11,8 +11,10 @@ import { ProjectsBlock } from "./components/projects";
 import { CertificationsBlock } from "./components/certifications";
 
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { JSX } from "react";
+import { useRef } from "react";
 import useWindowWidth from "./hooks/windowwidth";
+import useScrollObserver, { NavigationKey } from "./hooks/scrollobserver";
 import { env } from "@xenova/transformers";
 
 import scrollArrow from "../public/images/scrollarrow.png";
@@ -30,42 +32,38 @@ export default function Home() {
   const mainPageRef = useRef<HTMLDivElement>(null);
   const toolbarRef = useRef<HTMLElement>(null);
 
-  const sectionRefs: NavigationRefs = {
-    about: {
-      element: <AboutMeBlock />,
-      ref: useRef<HTMLElement>(null),
-    },
-    chatbot: {
-      element: <ChatbotBlock />,
-      ref: useRef<HTMLElement>(null),
-    },
-    experience: {
-      element: <WorkExperienceBlock />,
-      ref: useRef<HTMLElement>(null),
-    },
-    projects: {
-      element: <ProjectsBlock />,
-      ref: useRef<HTMLElement>(null),
-    },
-    certifications: {
-      element: <CertificationsBlock />,
-      ref: useRef<HTMLElement>(null),
-    },
+  const sectionRefs = {
+    about: useRef<HTMLElement>(null),
+    chatbot: useRef<HTMLElement>(null),
+    experience: useRef<HTMLElement>(null),
+    projects: useRef<HTMLElement>(null),
+    certifications: useRef<HTMLElement>(null),
   }
 
-  useEffect(() => {
-    const pageObserver = scrollObserver(toolbarRef.current, sectionRefs, (target) => {
-      if (width <= 500) {
-        target.scrollIntoView({
-          behavior: "smooth",
-          block: "center",
-        });
-      }
-    }, (target) => {});
+  const sectionContent: Record<NavigationKey, JSX.Element> = {
+    about: <AboutMeBlock />,
+    chatbot: <ChatbotBlock />,
+    experience: <WorkExperienceBlock />,
+    projects: <ProjectsBlock />,
+    certifications: <CertificationsBlock />,
+  }
 
-    toolbarRef.current!.querySelectorAll("span").forEach((span) => pageObserver.observe(span));
-    return () => pageObserver.disconnect();
-  }, [width]);
+  useScrollObserver(
+    "span",
+    toolbarRef,
+    sectionRefs,
+    {
+      intersect: (target: HTMLElement) => {
+        if (width <= 500) {
+          target.scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+          });
+        }
+      }
+    },
+    [width],
+  );
 
   return (
     <div className={styles.page} ref={mainPageRef}>
@@ -73,8 +71,8 @@ export default function Home() {
       <Toolbar root={mainPageRef} ref={toolbarRef} />
       {Object.keys(sectionRefs).map((id) => {
         return (
-          <section id={id} ref={sectionRefs[id as NavigationKey].ref} key={id}>
-            {sectionRefs[id as NavigationKey].element}
+          <section id={id} ref={sectionRefs[id as NavigationKey]} key={id}>
+            {sectionContent[id as NavigationKey]}
             <ScrollArrow />
           </section>
         );
