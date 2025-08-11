@@ -47,12 +47,12 @@ export function ChatbotBlock() {
     return (
         <div className={styles.chatbotBlock}>
             <form onSubmit={getMessage} className={styles.chatbotInputForm}>
-                <input name="question" type="search" autoComplete="off" className={styles.chatbotInputText}></input>
-                <button type="submit" className={styles.chatbotInputButton}>{"↵"}</button>
+                <input name="question" type="search" autoComplete="off" className={styles.chatbotInputFormText}></input>
+                <button type="submit" className={styles.chatbotInputFormButton}>{"↵"}</button>
             </form>  
             <div className={styles.chatbotOutput}>
                 {chatbotQuestion}
-                <p className={styles.chatbotOutputResponse}>{chatbotMessage}</p>
+                <p className={styles.chatbotOutputResponseText}>{chatbotMessage}</p>
             </div>
         </div>
     );

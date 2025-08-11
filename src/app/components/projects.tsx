@@ -19,13 +19,13 @@ interface ProjectWidgetProps {
 }
 function ProjectWidget({href, imageSrc, altText="", widgetTitle, widgetDescription}: ProjectWidgetProps) {
     return (
-        <Link href={href} target="_blank" className={styles.widgetBlock}>
-            <div className={styles.widgetTop}>
-                <Image src={imageSrc} alt={altText} className={styles.widgetImage}/>
-                <h1 className={styles.widgetTitle}>{widgetTitle} <span className={styles.widgetLink}><Image src={link} alt="" className={styles.widgetLinkImage} /></span></h1>
+        <Link href={href} target="_blank" className={styles.projectWidgetBlock}>
+            <div className={styles.projectWidgetTop}>
+                <Image src={imageSrc} alt={altText} className={styles.projectWidgetImage}/>
+                <h1 className={styles.projectWidgetTitle}>{widgetTitle} <span className={styles.projectWidgetLink}><Image src={link} alt="" className={styles.projectWidgetLinkImage} /></span></h1>
             </div>
-            <div className={styles.widgetBottom}>
-                <p className={styles.widgetDescription}>{widgetDescription}</p>
+            <div className={styles.projectWidgetBottom}>
+                <p className={styles.projectWidgetDescription}>{widgetDescription}</p>
             </div>
         </Link>
     );
@@ -79,7 +79,7 @@ export function ProjectsBlock() {
         }
     ];
     return (
-        <div className={styles.projectGrid}>
+        <div className={styles.projectBlock}>
             {projectsArray.map((project, i) => {
                 return <ProjectWidget href={project.link} imageSrc={project.image} widgetTitle={project.title} widgetDescription={project.description} key={i}/>
             })}

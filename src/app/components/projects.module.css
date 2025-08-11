@@ -1,4 +1,4 @@
-.projectGrid {
+.projectBlock {
     display: grid;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;
@@ -12,12 +12,12 @@
     margin: 0 5vw 8vh 5vw;
 }
 
-.widgetBlock {
+.projectWidgetBlock {
     width: 100%;
     height: 100%;
 }
 
-.widgetTop {
+.projectWidgetTop {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -34,7 +34,7 @@
     overflow: hidden;
 }
 
-.widgetImage {
+.projectWidgetImage {
     width: var(--image-size);
     height: var(--image-size);
 
@@ -43,7 +43,7 @@
     --image-size: 7vmin;
 }
 
-.widgetTitle {
+.projectWidgetTitle {
     padding: 0.75vw;
 
     font-size: 1.65vmax;
@@ -51,19 +51,19 @@
     color: var(--foreground);
 }
 
-.widgetLink {
+.projectWidgetLink {
     display: inline-block;
     vertical-align: middle;
 }
 
-.widgetLinkImage {
+.projectWidgetLinkImage {
 
     width: 1.6vmax;
     height: 1.6vmax;
     vertical-align: top;
 }
 
-.widgetBottom {
+.projectWidgetBottom {
     width: 100%;
     height: 60%;
 
@@ -76,29 +76,29 @@
     border-radius: 0px 0px 10px 10px;
 }
 
-.widgetDescription {
+.projectWidgetDescription {
     padding: 1vmin 2vmin 1vmin 2vmin;
 
     color: var(--foreground);
     font-size: 1.6vmax;
 }
 
-.widgetBlock:hover > * > h1 {
+.projectWidgetBlock:hover > * > h1 {
     color: var(--highlight);
 }
 
-.widgetBlock:hover > .widgetTop {
+.projectWidgetBlock:hover > .projectWidgetTop {
     border: solid var(--highlight);
     border-width: 0.3vmin 0.3vmin 0 0.3vmin;
 }
 
-.widgetBlock:hover > .widgetBottom {
+.projectWidgetBlock:hover > .projectWidgetBottom {
     border: solid var(--highlight);
     border-width: 0 0.3vmin 0.3vmin 0.3vmin;
 }
 
 @media only screen and (max-width: 1050px) {
-    .projectGrid {
+    .projectBlock {
         grid-template-rows: 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr;
     }

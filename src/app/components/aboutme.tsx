@@ -68,7 +68,7 @@ export function AboutMeBlock() {
     ];
     return (
         <div className={styles.aboutMeBlock}>
-            <Image src={profileImage} alt="A picture of Kedar Panchal" className={styles.profileImage}/>
+            <Image src={profileImage} alt="A picture of Kedar Panchal" className={styles.aboutMeImage}/>
             <div className={styles.contactInfo}>
                 <ContactInfoWidget href="https://www.linkedin.com/in/kedarpanchal" imageSrc={linkedInLogo} platformName="LinkedIn" />
                 <ContactInfoWidget href="https://github.com/KedarPanchal" imageSrc={githubLogo} platformName="GitHub" />

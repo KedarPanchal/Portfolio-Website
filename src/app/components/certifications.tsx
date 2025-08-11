@@ -18,8 +18,8 @@ interface CertificationWidgetProps {
 function CertificationWidget({imageSrc, altText="", certificationName, style}: CertificationWidgetProps) {
     return (
         <div className={styles.certificationWidget} style={style}>
-            <Image src={imageSrc} alt={altText} className={styles.certificationImage} />
-            <p className={styles.certificationName}>{certificationName}</p>
+            <Image src={imageSrc} alt={altText} className={styles.certificationWidgetImage} />
+            <p className={styles.certificationWidgetName}>{certificationName}</p>
         </div>
     )
 }
@@ -67,7 +67,7 @@ export function CertificationsBlock() {
                     return <CertificationWidget imageSrc={certification.image} altText={certification.altText ?? ""} certificationName={certification.name} key={i}/>
                 } else if (arr.length % 3 == 1) {
                     return (
-                        <div className={styles.finalCertificationWidget} key={i}>
+                        <div className={styles.finalCertificationWidgetWrapper} key={i}>
                             <CertificationWidget imageSrc={certification.image} altText={certification.altText ?? ""} certificationName={certification.name} />
                         </div>
                     );

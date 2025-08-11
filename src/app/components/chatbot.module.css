@@ -18,7 +18,7 @@
     height: auto;
 }
 
-.chatbotInputText {
+.chatbotInputFormText {
     width: auto;
     height: auto;
 
@@ -36,11 +36,11 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-.chatbotInputText:focus {
+.chatbotInputFormText:focus {
     outline-width: 0;
 }
 
-.chatbotInputText::-webkit-search-cancel-button {
+.chatbotInputFormText::-webkit-search-cancel-button {
     appearance: none;
     -webkit-appearance: none;
 
@@ -52,7 +52,7 @@
     cursor: pointer;
 }
 
-.chatbotInputButton {
+.chatbotInputFormButton {
     width: 100%;
     height: 100%;
 
@@ -107,7 +107,7 @@
     scrollbar-width: thin;
 }
 
-.chatbotOutputResponse {
+.chatbotOutputResponseText {
     margin-top: 2vh;
     padding-bottom: 2vh;
 }

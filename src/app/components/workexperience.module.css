@@ -39,7 +39,7 @@
     transform: scaleX(-1);
 }
 
-.workExperience {
+.workExperienceWidget {
     grid-column: 2;
 
     display: grid;
@@ -50,7 +50,7 @@
     height: auto;
 }
 
-.jobTitle {
+.workExperienceTitle {
     width: 100%;
     height: auto;
 
@@ -59,7 +59,7 @@
     border-top-right-radius: 10px;
 }
 
-.jobTitleText {
+.workExperienceTitleText {
     padding-top: 1vmin;
     padding-bottom: 1vmin;
     padding-left: 3vmin; 
@@ -70,7 +70,7 @@
     font-weight: inherit;
 }
 
-.jobDescription {
+.workExperienceDescription {
     width: 100%;
     height: auto;
 
@@ -79,7 +79,7 @@
     border-bottom-right-radius: 10px;
 }
 
-.jobDate {
+.workExperienceDescriptionDate {
     padding: 1rem 0 1rem 1.5rem;
 
     color: var(--foreground);
@@ -87,7 +87,7 @@
     font-style: italic;
 }
 
-.jobDescriptionText {
+.workExperienceDescriptionText {
     padding: 0 3vmin 0 5.5vmin;
     
     color: var(--foreground);

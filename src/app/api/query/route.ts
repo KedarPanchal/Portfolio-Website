@@ -22,11 +22,11 @@ async function getEmbeddings(documents: Array<string>) {
     const embeddings = [];
 
     for (const document in documents) {
-    const output = await embedder(document, {
-        pooling: "mean",
-        normalize: true,
-    });
-    embeddings.push(Array.from(output.data));
+        const output = await embedder(document, {
+            pooling: "mean",
+            normalize: true,
+        });
+        embeddings.push(Array.from(output.data));
     }
 
     return embeddings;

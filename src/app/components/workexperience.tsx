@@ -23,13 +23,13 @@ interface WorkExperienceWidgetProps {
 }
 function WorkExperienceWidget({jobName, workplaceName, date, description}: WorkExperienceWidgetProps) {
     return (
-        <div className={styles.workExperience}>
-            <div className={styles.jobTitle}>
-                <h1 className={styles.jobTitleText}><span style={{ fontWeight: "normal" }}>{jobName}</span> - <em>{workplaceName}</em></h1>
+        <div className={styles.workExperienceWidget}>
+            <div className={styles.workExperienceTitle}>
+                <h1 className={styles.workExperienceTitleText}><span style={{ fontWeight: "normal" }}>{jobName}</span> - <em>{workplaceName}</em></h1>
             </div>
-            <div className={styles.jobDescription}>
-                <p className={styles.jobDate}>{date.startMonth} {date.startYear} - {date.endMonth ?? ""} {date.endYear}</p>
-                <ul className={styles.jobDescriptionText}>
+            <div className={styles.workExperienceDescription}>
+                <p className={styles.workExperienceDescriptionDate}>{date.startMonth} {date.startYear} - {date.endMonth ?? ""} {date.endYear}</p>
+                <ul className={styles.workExperienceDescriptionText}>
                     {description.map((line, i) => {
                         return <li key={i}>{line}</li>
                     })}
