@@ -3,7 +3,7 @@
 import styles from "./page.module.css";
 
 import { ParticleBG } from "./components/particles";
-import { Toolbar } from "./components/toolbar";
+import { Toolbar, scrollObserver, NavigationKey, NavigationRefs } from "./components/toolbar";
 import { AboutMeBlock } from "./components/aboutme";
 import { WorkExperienceBlock } from "./components/workexperience";
 import { ChatbotBlock } from "./components/chatbot";
@@ -26,29 +26,43 @@ function ScrollArrow() {
 
 export default function Home() {
   const mainPageRef = useRef<HTMLDivElement>(null);
+  const toolbarRef = useRef<HTMLElement>(null);
+
+  const sectionRefs: NavigationRefs = {
+    about: {
+      element: <AboutMeBlock />,
+      ref: useRef<HTMLElement>(null),
+    },
+    chatbot: {
+      element: <ChatbotBlock />,
+      ref: useRef<HTMLElement>(null),
+    },
+    experience: {
+      element: <WorkExperienceBlock />,
+      ref: useRef<HTMLElement>(null),
+    },
+    projects: {
+      element: <ProjectsBlock />,
+      ref: useRef<HTMLElement>(null),
+    },
+    certifications: {
+      element: <CertificationsBlock />,
+      ref: useRef<HTMLElement>(null),
+    },
+  }
+
   return (
     <div className={styles.page} ref={mainPageRef}>
       <ParticleBG />
-      <Toolbar root={mainPageRef}/>
-      <section id="about">
-        <AboutMeBlock />
-        <ScrollArrow />
-      </section>
-      <section id="chatbot">
-        <ChatbotBlock />  
-        <ScrollArrow />
-      </section>
-      <section id="experience">
-        <WorkExperienceBlock />
-        <ScrollArrow />
-      </section>
-      <section id="projects">
-        <ProjectsBlock />
-        <ScrollArrow />
-      </section>
-      <section id="certifications">
-        <CertificationsBlock />
-      </section>
+      <Toolbar root={mainPageRef} ref={toolbarRef} />
+      {Object.keys(sectionRefs).map((id) => {
+        return (
+          <section id={id} ref={sectionRefs[id as NavigationKey].ref} key={id}>
+            {sectionRefs[id as NavigationKey].element}
+            <ScrollArrow />
+          </section>
+        );
+      })}
     </div>
   );
 }

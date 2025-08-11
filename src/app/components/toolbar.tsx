@@ -2,13 +2,14 @@
 
 import Link from "next/link";
 import styles from "./toolbar.module.css";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, JSX } from "react";
 import { RefObject } from "react";
 
 type IntersectionFunction = (target: HTMLElement) => void;
-type NavigationKey = "about" | "chatbot" | "experience" | "projects" | "certifications";
+export type NavigationKey = "about" | "chatbot" | "experience" | "projects" | "certifications";
 type NavigationContent = {
     name?: string,
+    element?: JSX.Element,
     ref: RefObject<HTMLElement | null>,
 }
 export type NavigationRefs = Record<NavigationKey, NavigationContent>;
@@ -69,7 +70,7 @@ export function Toolbar({root, ref}: ToolbarProps) {
 
         root.current!.querySelectorAll("section").forEach((section) => menuObserver.observe(section));
         return () => menuObserver.disconnect();
-    });
+    }, []);
 
     return (
         <nav className={styles.toolbar} ref={ref}>
