@@ -24,7 +24,7 @@
 
     overflow-x: scroll;
     overflow-y: hidden;
-    scrollbar-width: thin;
+    scrollbar-width: none;
     scrollbar-color: var(--foreground) transparent;
 }
 
@@ -49,6 +49,7 @@
     .toolbar {
         scroll-snap-type: x mandatory;
         scroll-behavior: smooth;
+        scrollbar-width: thin;
     }
     .toolbar > span {
         flex: 0 0 100%;
