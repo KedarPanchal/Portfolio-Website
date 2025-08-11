@@ -201,7 +201,6 @@ export function WorkExperienceBlock() {
 
     const [experienceState, dispatch] = useReducer(changeExperienceIndex, {index: 0, maxLength: jobs.length});
 
-
     return (
         <div className={styles.workExperienceBlock}>
             <button className={styles.navButton} onClick={() => dispatch({type: "decrement"})}>

@@ -81,9 +81,9 @@ export function AboutMeBlock() {
             <div className={styles.skillsBlock}>
                 {skillsArray.map((skill, i, arr) => {
                     if (i < arr.length - 1) {
-                        return <SkillWidget imageSrc={skill.image} skillName={skill.name} key={i}/>  
+                        return <SkillWidget imageSrc={skill.image} skillName={skill.name} key={skill.name}/>  
                     } else if (arr.length % 3 == 1) {
-                        return <SkillWidget imageSrc={skill.image} skillName={skill.name} style={{ gridColumnStart: 2 }} key={i}/>
+                        return <SkillWidget imageSrc={skill.image} skillName={skill.name} style={{ gridColumnStart: 2 }} key={skill.name}/>
                     }
                 })}
             </div>

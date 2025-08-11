@@ -64,11 +64,11 @@ export function CertificationsBlock() {
         <div className={styles.certificationsBlock}>
             {certifications.map((certification, i, arr) => {
                 if (i < arr.length - 1) {
-                    return <CertificationWidget imageSrc={certification.image} altText={certification.altText ?? ""} certificationName={certification.name} key={i}/>
+                    return <CertificationWidget imageSrc={certification.image} altText={certification.altText ?? ""} certificationName={certification.name} key={certification.name}/>
                 } else if (arr.length % 3 == 1) {
                     return (
                         <div className={styles.finalCertificationWidgetWrapper} key={i}>
-                            <CertificationWidget imageSrc={certification.image} altText={certification.altText ?? ""} certificationName={certification.name} />
+                            <CertificationWidget imageSrc={certification.image} altText={certification.altText ?? ""} certificationName={certification.name} key={certification.name} />
                         </div>
                     );
                 }

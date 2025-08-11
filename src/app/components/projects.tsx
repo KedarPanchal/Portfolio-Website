@@ -80,8 +80,8 @@ export function ProjectsBlock() {
     ];
     return (
         <div className={styles.projectBlock}>
-            {projectsArray.map((project, i) => {
-                return <ProjectWidget href={project.link} imageSrc={project.image} widgetTitle={project.title} widgetDescription={project.description} key={i}/>
+            {projectsArray.map((project) => {
+                return <ProjectWidget href={project.link} imageSrc={project.image} widgetTitle={project.title} widgetDescription={project.description} key={project.title}/>
             })}
         </div>
     );
