@@ -7,11 +7,15 @@ import { RefObject } from "react";
 
 type IntersectionFunction = (target: HTMLElement) => void;
 type NavigationKey = "about" | "chatbot" | "experience" | "projects" | "certifications";
-export type NavigationRefs = Record<NavigationKey, RefObject<HTMLElement | null>>;
+type NavigationContent = {
+    name?: string,
+    ref: RefObject<HTMLElement | null>,
+}
+export type NavigationRefs = Record<NavigationKey, NavigationContent>;
 export function scrollObserver(root: HTMLElement | null, navigationRefs: NavigationRefs, intersectionFunction: IntersectionFunction, nonintersectionFunction: IntersectionFunction) {
     return new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
-            const scrollTarget = navigationRefs[entry.target.id as NavigationKey].current!;
+            const scrollTarget = navigationRefs[entry.target.id as NavigationKey].ref.current!;
             if (entry.isIntersecting) {
                 intersectionFunction(scrollTarget);
             } else {
@@ -30,11 +34,26 @@ interface ToolbarProps {
 }
 export function Toolbar({root, ref}: ToolbarProps) {
     const toolbarRefs: NavigationRefs = {
-        about: useRef<HTMLAnchorElement>(null),
-        chatbot: useRef<HTMLAnchorElement>(null),
-        experience: useRef<HTMLAnchorElement>(null),
-        projects: useRef<HTMLAnchorElement>(null),
-        certifications: useRef<HTMLAnchorElement>(null),
+        about: {
+            name: "Kedar Panchal",
+            ref: useRef<HTMLElement>(null),
+        },
+        chatbot: {
+            name: "AI Assistant",
+            ref: useRef<HTMLElement>(null),
+        },
+        experience: {
+            name: "Experience",
+            ref: useRef<HTMLElement>(null),
+        },
+        projects: {
+            name: "Projects",
+            ref: useRef<HTMLElement>(null),
+        },
+        certifications: {
+            name: "Certifications",
+            ref: useRef<HTMLElement>(null),
+        },
     }
 
     useEffect(() => {
@@ -54,21 +73,13 @@ export function Toolbar({root, ref}: ToolbarProps) {
 
     return (
         <nav className={styles.toolbar} ref={ref}>
-            <span ref={toolbarRefs["about"]}>
-                <Link href="#about" style={{ textDecoration: "none" }}>Kedar Panchal</Link>
-            </span>
-            <span ref={toolbarRefs["chatbot"]}>
-                <Link href="#chatbot" style={{ textDecoration: "none" }}>AI Assistant</Link>
-            </span>
-            <span ref={toolbarRefs["experience"]}>
-                <Link href="#experience" style={{ textDecoration: "none" }}>Experience</Link>
-            </span>
-            <span ref={toolbarRefs["projects"]}>
-                <Link href="#projects" style={{ textDecoration: "none" }}>Projects</Link>
-            </span>
-            <span ref={toolbarRefs["certifications"]}>
-                <Link href="#certifications" style={{ textDecoration: "none" }}>Certifications</Link>
-            </span>
+            {Object.keys(toolbarRefs).map((id) => {
+                return (
+                    <span id={`toolbar_${id}`} ref={toolbarRefs[id as NavigationKey].ref} key={id}>
+                        <Link href={`#${id}`} style={{ textDecoration: "none", textTransform: "capitalize" }}>{toolbarRefs[id as NavigationKey].name}</Link>
+                    </span>
+                );
+            })}
         </nav>  
     );
 }
