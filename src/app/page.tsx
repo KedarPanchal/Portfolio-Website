@@ -82,7 +82,7 @@ export default function Home() {
             {id != Object.keys(sectionRefs)[Object.keys(sectionRefs).length - 1] ? <ScrollArrow /> : <></>}
           </section>
         );
-        return <FadeInWrapper root={mainPageRef} children={section} key={id} />
+        return <FadeInWrapper root={mainPageRef} key={id}>{section}</FadeInWrapper>
       })}
     </div>
   );
