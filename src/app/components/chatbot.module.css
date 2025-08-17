@@ -27,7 +27,9 @@
     border: solid var(--foreground);
     border-radius: var(--radius) 0 0 0;
 
-    font-size: 1.3rem;
+    font-size: 1.6vmax;
+    font-family: inherit;
+    font-weight: inherit;
     color: var(--foreground);
     padding-left: 1rem;
     padding-right: 0.5rem;
@@ -110,4 +112,6 @@
 .chatbotOutputResponseText {
     margin-top: 2vh;
     padding-bottom: 2vh;
+
+    line-height: 3.5vh;
 }
