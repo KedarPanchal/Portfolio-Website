@@ -31,6 +31,7 @@ export function ChatbotBlock() {
             setChatbotQuestion((<p><b>You Asked: </b>{formData.get("question")! as string}</p>));
 
             setChatbotMessage(generationIndicators[Math.floor(Math.random() * generationIndicators.length)]);
+            
             const responsePromise = fetch("/api/query", {
                 method: "POST",
                 body: formData.get("question"),
@@ -39,9 +40,9 @@ export function ChatbotBlock() {
                 setTimeout(() => reject(new Error("Timed out after 10 seconds")), 10000);
             });
             Promise.race([responsePromise, timeout])
-                .then((response) => (response as Response).json())
+                .then(response => (response as Response).json())
                 .then(json => setChatbotMessage(json.message))
-                .catch(reject => setChatbotMessage(`Error: ${reject}`));
+                .catch(reject => setChatbotMessage(`${reject}`));
         } else {
             setChatbotMessage("");
             setChatbotQuestion((<p>{defaultString}</p>));
