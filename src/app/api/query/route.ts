@@ -42,22 +42,22 @@ const splitter = new RecursiveCharacterTextSplitter({
     chunkSize: 1024, chunkOverlap: 128
 });
 
-const documents = await loader.load();
-const splits = await splitter.splitDocuments(documents);
-
 const embeddings = {
     embedDocuments: getEmbeddings,
     embedQuery: async (query: string) => (await getEmbeddings([query]))[0],
 }
-const vectorStore = await MemoryVectorStore.fromDocuments(splits, embeddings);
-const retriever = vectorStore.asRetriever({
-    k: 10,
-    searchType: "mmr",
-    searchKwargs: {
-        fetchK: 50,
-        lambda: 0.9
-    }
-});
+
+const retriever = await loader.load()
+    .then(documents => splitter.splitDocuments(documents))
+    .then(splits => MemoryVectorStore.fromDocuments(splits, embeddings))
+    .then(vectorStore => vectorStore.asRetriever({
+        k: 10,
+        searchType: "mmr",
+        searchKwargs: {
+            fetchK: 50,
+            lambda: 0.9,
+        }
+    }));
 
 const model = new ChatGroq({
     model: "llama3-70b-8192",
