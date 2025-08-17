@@ -68,7 +68,7 @@ const model = new ChatGroq({
 // Export function
 export async function POST(prompt: Request) {
     "use server"
-    const RAG_TEMPLATE = `Your task is to answer the given questions about Kedar Panchal using only the provided context. Never include details not present in the provided context.
+    const RAG_TEMPLATE = `Your task is to answer the given questions about Kedar Panchal in a friendly tone using only the provided context. Never include details not present in the provided context.
     Answer in complete sentences, and use as many examples from the context as possible. Use correct grammar.
 
     Question: {question}
@@ -88,9 +88,7 @@ export async function POST(prompt: Request) {
         callbacks: [new ConsoleCallbackHandler()],
     });
 
-    const text = await prompt.text()
-    const answer = await chain.invoke(text);
-    console.log(answer);
+    const answer = await prompt.text().then(text => chain.invoke(text));
     return NextResponse.json({
         message: answer,
     });
