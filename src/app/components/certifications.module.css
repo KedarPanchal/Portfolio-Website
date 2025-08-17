@@ -37,7 +37,7 @@
     width: var(--size);
     height: var(--size);
 
-    margin-left: 1vw;
+    margin: 1vh 0 0 1vw;
 
     --size: 7vmin;
 }
