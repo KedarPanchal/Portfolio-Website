@@ -8,6 +8,7 @@ import microsoftLogo from "../../public/images/logos/microsoftlogo.png";
 import deepLearningAILogo from "../../public/images/logos/deeplearningailogo.png";
 import javaLogo from "../../public/images/logos/javalogo.png";
 import pythonLogo from "../../public/images/logos/pythonlogo.png";
+import linkedinLogo from "../../public/images/logos/linkedinlogo.png";
 
 interface CertificationWidgetProps {
     imageSrc: StaticImageData,
@@ -59,19 +60,16 @@ export function CertificationsBlock() {
             image: microsoftLogo,
             name: "Microsoft Office Specialist: Word Associate",
         },
+        {
+            image: linkedinLogo,
+            name: "Deep Learning with Python: Sequence Models and Transformers",
+        },
     ];
+    
     return (
         <div className={styles.certificationsBlock}>
             {certifications.map((certification, i, arr) => {
-                if (i < arr.length - 1) {
                     return <CertificationWidget imageSrc={certification.image} altText={certification.altText ?? ""} certificationName={certification.name} key={certification.name}/>
-                } else if (arr.length % 3 == 1) {
-                    return (
-                        <div className={styles.finalCertificationWidgetWrapper} key={i}>
-                            <CertificationWidget imageSrc={certification.image} altText={certification.altText ?? ""} certificationName={certification.name} key={certification.name} />
-                        </div>
-                    );
-                }
             })}
         </div>
     );
