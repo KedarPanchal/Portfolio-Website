@@ -54,7 +54,7 @@ const retriever = await loader.load()
         k: 10,
         searchType: "mmr",
         searchKwargs: {
-            fetchK: 50,
+            fetchK: 40,
             lambda: 0.9,
         }
     }));
@@ -62,20 +62,34 @@ const retriever = await loader.load()
 const model = new ChatGroq({
     model: "llama3-70b-8192",
     temperature: 0.4,
-    maxTokens: 1024,
+    maxTokens: 512,
 });
+
+const split_model = new ChatGroq({
+    model: "llama-3.1-8b-instant",
+    temperature: 0.0,
+    maxTokens: 768,
+})
 
 // Export function
 export async function POST(prompt: Request) {
     "use server"
-    const RAG_TEMPLATE = `Your task is give detailed answers to the given questions about Kedar Panchal in a friendly and approachable tone using only the provided context. Never include details not present in the provided context.
-    Never give incorrect information from the context. Answer in complete sentences, and use as many examples from the context as possible. Use correct grammar and answer only in paragraph form.
+    const RAG_TEMPLATE = `Your task is give answers to the given questions about Kedar Panchal using ONLY directly relevant information from the provided context. Answer in a friendly and approachable tone.
+    Never include details not present in the provided context. Never give incorrect information from the context. Answer in complete sentences. 
+    Use as many relevant examples from the context as possible. Never use examples that don't answer the question provided. Never answer with incomplete sentences. 
+    Always use correct grammar and answer only in paragraph form.
 
     Question: {question}
     Context: {context}
     Answer:`;
 
+    const SPLIT_TEMPLATE = `Your task is to split a given paragraph into smaller paragraphs of at most 3-4 sentences in length grouped based on contextual relevance.
+    Each paragraph should be separated with a line break. Answer only with the split paragraphs. Never answer with anything other than the split paragraph.
+    
+    Paragraph: {paragraph}`
+
     const rag_prompt = ChatPromptTemplate.fromTemplate(RAG_TEMPLATE);
+    const split_prompt = ChatPromptTemplate.fromTemplate(SPLIT_TEMPLATE);
     const chain = RunnableSequence.from([
       {
         context: retriever.pipe((documents: Document[]) => (documents.map(document => document.pageContent)).join("\n\n")),
@@ -83,7 +97,13 @@ export async function POST(prompt: Request) {
       },
       rag_prompt,
       model,
-      new StringOutputParser()
+      new StringOutputParser(),
+      {
+        paragraph: new RunnablePassthrough()
+      },
+      split_prompt,
+      split_model,
+      new StringOutputParser(),
     ]).withConfig({
         callbacks: [new ConsoleCallbackHandler()],
     });
