@@ -59,7 +59,7 @@ const retriever = await loader.load()
         }
     }));
 
-const model = new ChatGroq({
+const rag_model = new ChatGroq({
     model: "llama3-70b-8192",
     temperature: 0.4,
     maxTokens: 512,
@@ -86,20 +86,20 @@ export async function POST(prompt: Request) {
     const SPLIT_TEMPLATE = `Your task is to split a given paragraph into smaller paragraphs of at most 3-4 sentences in length grouped based on contextual relevance.
     Each paragraph should be separated with a line break. Answer only with the split paragraphs. Never answer with anything other than the split paragraph.
     
-    Paragraph: {paragraph}`
+    Paragraph: {paragraph}`;
 
     const rag_prompt = ChatPromptTemplate.fromTemplate(RAG_TEMPLATE);
     const split_prompt = ChatPromptTemplate.fromTemplate(SPLIT_TEMPLATE);
     const chain = RunnableSequence.from([
       {
         context: retriever.pipe((documents: Document[]) => (documents.map(document => document.pageContent)).join("\n\n")),
-        question: new RunnablePassthrough()
+        question: new RunnablePassthrough(),
       },
       rag_prompt,
-      model,
+      rag_model,
       new StringOutputParser(),
       {
-        paragraph: new RunnablePassthrough()
+        paragraph: new RunnablePassthrough(),
       },
       split_prompt,
       split_model,
