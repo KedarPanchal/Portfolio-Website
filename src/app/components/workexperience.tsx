@@ -189,13 +189,13 @@ export function WorkExperienceBlock() {
         }
     ];
 
-    const workExperienceArr = jobs.map((job, i) => {
+    const workExperienceArr = jobs.map((job) => {
         return <WorkExperienceWidget 
             jobName={job.name} 
             workplaceName={job.workplace} 
             date={job.date} 
             description={job.description} 
-            key={i} 
+            key={job.workplace} 
         />
     });
 
