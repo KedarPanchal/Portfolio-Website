@@ -3,6 +3,7 @@ import styles from "./chatbot.module.css";
 import { useState } from "react";
 
 import { FormEvent } from "react";
+import Scrollbar from "react-scrollbars-custom";
 
 export function ChatbotBlock() {
     const defaultString = "I'm Kedar's AI assistant, ready to talk about his resume and work experience. Let me know how I can help!";
@@ -28,7 +29,7 @@ export function ChatbotBlock() {
         const formData = new FormData(event.currentTarget);
 
         if (formData.get("question")) {
-            setChatbotQuestion((<p><b>You Asked: </b>{formData.get("question")! as string}</p>));
+            setChatbotQuestion((<p className={styles.chatbotOutputQuestionText}><b>You Asked: </b>{formData.get("question")! as string}</p>));
 
             setChatbotMessage(generationIndicators[Math.floor(Math.random() * generationIndicators.length)]);
             const abortController = new AbortController();
@@ -59,10 +60,23 @@ export function ChatbotBlock() {
                 <input name="question" type="search" autoComplete="off" className={styles.chatbotInputFormText}></input>
                 <button type="submit" className={styles.chatbotInputFormButton}>{"↵"}</button>
             </form>  
-            <div className={styles.chatbotOutput}>
+            <Scrollbar 
+                className={styles.chatbotOutput}
+                trackYProps={{
+                    style: {
+                        background: "transparent",
+                        width: "0.4vmax",
+                    }
+                }}
+                thumbYProps={{
+                    style: {
+                        background: "#EDEDED",
+                    }
+                }}
+            >
                 {chatbotQuestion}
                 <p className={styles.chatbotOutputResponseText}>{chatbotMessage}</p>
-            </div>
+            </Scrollbar>
         </div>
     );
 }
