@@ -74,22 +74,24 @@ const split_model = new ChatGroq({
 // Export function
 export async function POST(prompt: Request) {
     "use server"
-    const RAG_TEMPLATE = `Your task is give answers to the given questions about Kedar Panchal using ONLY directly relevant information from the provided context. Answer in a friendly and approachable tone.
-    Never include details not present in the provided context. Never give incorrect information from the context. Answer in complete sentences. 
+    const RAG_TEMPLATE = `Your task is give answers to the given questions about Kedar Panchal using ONLY directly relevant information from the provided context.
+    Answer in a friendly and approachable tone. Never include details not present in the provided context. Never give incorrect information from the context. Answer in complete sentences.
     Use as many relevant examples from the context as possible. Never use examples that don't answer the question provided. Never answer with incomplete sentences. 
-    Always use correct grammar and answer only in paragraph form.
+    Always use correct grammar and answer only in paragraph form. Instead of using words like "inferred" or "based on the provided context," use definitive language.
+    If you cannot answer the question, suggest contacting me through my email or LinkedIn, and provide both pieces of contact information in your response. 
 
     Question: {question}
     Context: {context}
     Answer:`;
 
-    const SPLIT_TEMPLATE = `Your task is to split a given paragraph into smaller paragraphs of at most 3-4 sentences in length grouped based on contextual relevance.
-    Each paragraph should be separated with a line break. Answer only with the split paragraphs. Never answer with anything other than the split paragraph.
+    const SPLIT_TEMPLATE = `Your task is to split a given paragraph into smaller paragraphs of at most 5-6 sentences in length grouped based on loose contextual relevance.
+    Paragraphs should be split by exactly one line break. Answer only with the split paragraphs. Never answer with anything other than the split paragraph.
     
     Paragraph: {paragraph}`;
 
     const rag_prompt = ChatPromptTemplate.fromTemplate(RAG_TEMPLATE);
     const split_prompt = ChatPromptTemplate.fromTemplate(SPLIT_TEMPLATE);
+
     const chain = RunnableSequence.from([
       {
         context: retriever.pipe((documents: Document[]) => (documents.map(document => document.pageContent)).join("\n\n")),
