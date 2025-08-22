@@ -9,6 +9,7 @@ import Link from "next/link";
 
 import { useScrollObserver } from "../hooks/scrollobserver";
 import { NavigationRefs, NavigationKey } from "../hooks/scrollobserver";
+import Scrollbar from "react-scrollbars-custom";
 
 interface ToolbarProps {
     root: RefObject<HTMLDivElement | null>,
@@ -49,14 +50,34 @@ export function Toolbar({root, ref}: ToolbarProps) {
     );
 
     return (
-        <nav className={styles.toolbar} ref={ref}>
-            {Object.keys(toolbarRefs).map((id) => {
-                return (
-                    <span id={`toolbar_${id}`} ref={toolbarRefs[id as NavigationKey]} key={id}>
-                        <Link href={`#${id}`} style={{ textDecoration: "none", textTransform: "capitalize" }}>{toolbarNames[id as NavigationKey]}</Link>
-                    </span>
-                );
-            })}
-        </nav>  
+            <nav className={styles.toolbar} ref={ref}>
+                <Scrollbar
+                    trackXProps={{
+                        style: {
+                            background: "transparent",
+                            height: "0.4vmax",
+                        }
+                    }}
+                    thumbXProps={{
+                        style: {
+                            background: "#EDEDED",
+                        },
+                    }}
+                    contentProps={{
+                        className: styles.scrollbar
+                    }}
+                    scrollerProps={{
+                        className: styles.scroller
+                    }}
+                >
+                {Object.keys(toolbarRefs).map((id) => {
+                    return (
+                        <span className={styles.toolbarElement} id={`toolbar_${id}`} ref={toolbarRefs[id as NavigationKey]} key={id}>
+                            <Link href={`#${id}`} style={{ textDecoration: "none", textTransform: "capitalize" }}>{toolbarNames[id as NavigationKey]}</Link>
+                        </span>
+                    );
+                })}
+                </Scrollbar>
+            </nav>  
     );
 }

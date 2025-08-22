@@ -3,11 +3,6 @@
     top: 0;
     z-index: 10;
 
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-
     width: 100vw;
     height: 8vh;
     min-height: 67px;
@@ -21,18 +16,22 @@
     background-color: var(--background);
 
     white-space: nowrap;
-
-    overflow-x: scroll;
-    overflow-y: hidden;
-    scrollbar-width: none;
-    scrollbar-color: var(--foreground) transparent;
 }
 
-.toolbar > span:hover {
+.scrollbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    white-space: nowrap;
+}
+
+.toolbarElement {
     color: var(--highlight);
 }
 
-.toolbar > span {
+.toolbarElement {
     display: block;
     flex: 0 0 1;
 
@@ -46,12 +45,11 @@
 }
 
 @media only screen and (max-width: 500px) {
-    .toolbar {
+    .scroller  {
         scroll-snap-type: x mandatory;
         scroll-behavior: smooth;
-        scrollbar-width: thin;
     }
-    .toolbar > span {
+    .toolbarElement {
         flex: 0 0 100%;
         height: 100%;
         scroll-snap-align: start;
