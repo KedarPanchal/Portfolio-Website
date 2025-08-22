@@ -28,16 +28,21 @@
     cursor: pointer;
 }
 
-.navButtonLeftArrow {
+.navButtonArrow {
     width: calc(0.511 * var(--size));
     height: var(--size);
 }
 
-.navButtonRightArrow {
-    width: calc(0.511 * var(--size));
-    height: var(--size);
+.fadeIn {
+    opacity: 0;
+    visibility: visible;
+    transition: opacity 2.5s ease-out;
+}
 
-    transform: scaleX(-1);
+.isVisible {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 2.5s ease-out;
 }
 
 .workExperienceWidget {

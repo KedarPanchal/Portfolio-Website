@@ -2,7 +2,7 @@
 
 import styles from "./workexperience.module.css";
 
-import { useReducer } from "react";
+import { useEffect, useReducer, useState } from "react";
 
 import Image from "next/image";
 
@@ -204,11 +204,11 @@ export function WorkExperienceBlock() {
     return (
         <div className={styles.workExperienceBlock}>
             <button className={styles.navButton} onClick={() => dispatch({type: "decrement"})}>
-                <Image src={arrowHead} alt="" className={styles.navButtonLeftArrow} />
+                <Image src={arrowHead} alt="" className={styles.navButtonArrow} />
             </button>
                 {workExperienceArr[experienceState.index]}
             <button className={styles.navButton} onClick={() => dispatch({type: "increment"})}>
-                <Image src={arrowHead} alt="" className={styles.navButtonRightArrow} />
+                <Image src={arrowHead} alt="" className={styles.navButtonArrow} style={{ transform: "scaleX(-1)" }} />
             </button>
         </div>
     );
