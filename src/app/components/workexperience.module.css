@@ -33,16 +33,6 @@
     height: var(--size);
 }
 
-.invisible {
-    opacity: 0;
-    transition: opacity 1s ease-out;
-}
-
-.visible {
-    opacity: 1;
-    transition: opacity 1s ease-in;
-}
-
 .workExperienceWidget {
     grid-column: 2;
 
