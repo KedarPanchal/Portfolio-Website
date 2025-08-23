@@ -207,7 +207,7 @@ export function WorkExperienceBlock() {
         setTimeout(() => {
             setCurrentExperience(delayedExperienceState.index);
             setFade(styles.visible);
-        }, 1000);
+        }, 1500);
     }, [delayedExperienceState.index]);
 
     return (
