@@ -199,14 +199,25 @@ export function WorkExperienceBlock() {
         />
     });
 
-    const [experienceState, dispatch] = useReducer(changeExperienceIndex, {index: 0, maxLength: jobs.length});
+    const [delayedExperienceState, dispatch] = useReducer(changeExperienceIndex, {index: 0, maxLength: jobs.length});
+    const [currentExperience, setCurrentExperience] = useState(0);
+    const [fade, setFade] = useState(styles.visible);
+    useEffect(() => {
+        setFade(styles.invisible);
+        setTimeout(() => {
+            setCurrentExperience(delayedExperienceState.index);
+            setFade(styles.visible);
+        }, 1000);
+    }, [delayedExperienceState.index]);
 
     return (
         <div className={styles.workExperienceBlock}>
             <button className={styles.navButton} onClick={() => dispatch({type: "decrement"})}>
                 <Image src={arrowHead} alt="" className={styles.navButtonArrow} />
             </button>
-                {workExperienceArr[experienceState.index]}
+                <div className={fade}>
+                    {workExperienceArr[currentExperience]}
+                </div>
             <button className={styles.navButton} onClick={() => dispatch({type: "increment"})}>
                 <Image src={arrowHead} alt="" className={styles.navButtonArrow} style={{ transform: "scaleX(-1)" }} />
             </button>

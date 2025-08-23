@@ -33,16 +33,14 @@
     height: var(--size);
 }
 
-.fadeIn {
+.invisible {
     opacity: 0;
-    visibility: visible;
-    transition: opacity 2.5s ease-out;
+    transition: opacity 1s ease-out;
 }
 
-.isVisible {
+.visible {
     opacity: 1;
-    visibility: visible;
-    transition: opacity 2.5s ease-out;
+    transition: opacity 1s ease-in;
 }
 
 .workExperienceWidget {
