@@ -1,6 +1,11 @@
-In 2025, Kedar Panchal earned the Microsoft AI & ML certification from Microsoft. This certification demonstrates knowledge of neural network architecture, convolutional neural networks, fine-tuning large-language models using PEFT and LoRA, Azure AutoML, and AI model deployment. He developed models using scikit-learn, TensorFlow, Keras, PyTorch, and Hugging Face Transformers.
-In 2025, Kedar Panchal earned the Deep Learning with Python: Sequence Models and Transformers certification from LinkedIn. This certification demonstrates knolwedge of recurrent neural networks, long short-term memory models, gated recurrent unit models, and the transformer architecture. He developed recurrent neural networks using TensorFlow and Keras, and performed text generation and classification tasks using the Hugging Face Transformers library.
-In 2024, Kedar Panchal earned the Machine Learning Specialization certification from Stanford University and DeepLearning.AI. The program covered supervised learning, neural network architecture, recommender systems, and reinforcement learning. He developed models using scikit-learn and neural networks with TensorFlow, Keras, and PyTorch.
-In 2024, Kedar Panchal earned the PCEP-Certified Entry-Level Python Programmer certification from the Python Institute. This certification demonstrates knowledge of Python basics, including syntax, data types, control flow, functions, exceptions, I/O operations, and programming logic.
-In 2023, Kedar Panchal earned the IT Specialist: Java certification from Certiport, validating his foundational Java programming skills.
-In 2023, Kedar Panchal earned the Microsoft Office Specialist certification from Certiport, demonstrating proficiency in Excel, PowerPoint, and Word.
+Certification (2025): Microsoft AI & ML, Microsoft. Demonstrates knowledge of neural network architecture, convolutional neural networks, fine-tuning large language models with PEFT and LoRA, Azure AutoML, and AI model deployment. Developed models with scikit-learn, TensorFlow, Keras, PyTorch, and Hugging Face Transformers.
+
+Certification (2025): Deep Learning with Python: Sequence Models and Transformers, LinkedIn. Demonstrates knowledge of recurrent neural networks, long short-term memory (LSTM), gated recurrent units (GRU), and transformer architecture. Built recurrent neural networks using TensorFlow and Keras. Performed text generation and classification using Hugging Face Transformers.
+
+Certification (2024): Machine Learning Specialization, Stanford University and DeepLearning.AI. Covers supervised learning, neural network architecture, recommender systems, and reinforcement learning. Developed models with scikit-learn, TensorFlow, Keras, and PyTorch. Note: Kedar Panchal was not enrolled as a student at Stanford University despite the certification affiliation.
+
+Certification (2024): PCEP – Certified Entry-Level Python Programmer, Python Institute. Demonstrates knowledge of Python syntax, data types, control flow, functions, exceptions, I/O operations, and programming logic.
+
+Certification (2023): IT Specialist: Java, Certiport. Validates foundational Java programming skills.
+
+Certification (2023): Microsoft Office Specialist, Certiport. Demonstrates proficiency in Microsoft Excel, PowerPoint, and Word.

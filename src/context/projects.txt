@@ -1,8 +1,15 @@
-Kedar Panchal created ls++, an enhanced "ls" command-line tool that lists files in a tree format. He developed it using Java, Maven, and GraalVM.
-Kedar Panchal programmed the VST3 instrument Whiplash as a project, which is a cross-platform synthesizer with 10 audio effects.
-Kedar Panchal programmed the command-line tool Text2Phone using Java and Maven as a project, which allows sending files from a computer to a phone using SMS/MMS gateways.
-Kedar Panchal programmed the cross-platform command-line app qwiki in Rust as a project. The app allows for quick access to Wikipedia articles.
-Kedar Panchal developed an AI inpainting plug-in for GIMP, integrating Stable Diffusion XL to enhance image editing with local generative AI. The plug-in was programmed in Python using the Huggingface Transformers library.
-Kedar Panchal worked on fine-tuning EfficientNet-B1 for breast cancer classification, improving tumor detection accuracy and speed. The project used PyTorch and scikit-learn in a Jupyter Notebook for data preprocessing and model training.
-Kedar Panchal programmed a fine-tuned FLAN-T5-Small transformer model for text summarization using Low Rank Adaptation (LoRA), training it on research paper abstracts and summaries with the Hugging Face Transformers library.
-Kedar Panchal designed a portfolio website using React and Next.js, which included a retrieval-augmented generative AI assistant built using langchain.js, transformers.js, and xenova to discuss his work experience, skills, various projects, and more.
+Project: ls++ – Coded and developed an enhanced command-line “ls” tool that lists files in a tree format. Used Java, Maven, and GraalVM.
+
+Project: Whiplash – Programmed a cross-platform VST3 synthesizer instrument with 10 audio effects.
+
+Project: Text2Phone – Coded and programmed a command-line tool to send files from a computer to a phone via SMS/MMS gateways. Developed using Java and Maven.
+
+Project: qwiki – Programmed a cross-platform command-line application for quick access to Wikipedia articles. Written in Rust.
+
+Project: AI Inpainting Plug-in for GIMP – Developed and programmed a plug-in integrating Stable Diffusion XL to enhance image editing with local generative AI. Built in Python using Hugging Face Transformers.
+
+Project: Breast Cancer Classification with EfficientNet-B1 – Coded and developed a fine-tuned EfficientNet-B1 model for tumor detection, improving accuracy and speed. Used PyTorch and scikit-learn in a Jupyter Notebook for data preprocessing and model training.
+
+Project: FLAN-T5-Small Transformer Text Summarization – Coded and fine-tuned a transformer model using Low Rank Adaptation (LoRA). Trained on research paper abstracts and summaries with Hugging Face Transformers.
+
+Project: Portfolio Website with RAG AI Assistant – Developed a portfolio website using React and Next.js. Coded a retrieval-augmented generative AI assistant with langchain.js, transformers.js, and xenova to present work experience, skills, projects, and more.
