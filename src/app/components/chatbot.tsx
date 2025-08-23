@@ -39,7 +39,7 @@ export function ChatbotBlock() {
                 signal: abortController.signal,
             });
             const timeout = new Promise((_, reject) => {
-                setTimeout(() => reject(new Error("Timed out after 15 seconds")), 15000);
+                setTimeout(() => reject(new Error("Timed out after 15 seconds. Please try again.")), 15000);
             });
             Promise.race([responsePromise, timeout])
                 .then(response => (response as Response).json())
