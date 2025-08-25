@@ -78,11 +78,9 @@ export function WorkExperienceBlock() {
                 endYear: "Present",
             },
             description: [
-                "Created Apps Script programs to automate issuance of late notices for real estate loan payments",
+                "Created Apps Script programs to automate issuance of late notices for real estate loan payments creating a 97.5% efficiency gain",
                 "Explained and documented automation tools clearly to non-technical team members for them to utilize in their departments",
                 "Managed mortgage software and spreadsheets for tracking and logging real-estate loan financials",
-                "Automated tracking of property insurance premiums",
-                "Communicated with borrowers regarding late payments",
             ],
         },
         {
@@ -94,10 +92,9 @@ export function WorkExperienceBlock() {
                 endYear: "Present",
             },
             description: [
-                "Project-managed and performed real-estate renovation projects across Texas",
-                "Renovated class B and C properties for lease or sale",
-                "Carried out various installation, repair, maintenance, and make-ready tasks",
-                "Met with tenants to identify necessary renovations and determine best course of action",
+                "Project-managed and performed real-estate renovation projects on 4 properties across Texas",
+                "Renovated 4 class B and C properties to prepare for lease or sale",
+                "Carried out various installation, repair, and make-ready tasks for property maintenance and upkeep",
                 "Coordinated with team-members to verify properties met move-out standards defined in lease agreement",
             ],
         },
@@ -113,8 +110,8 @@ export function WorkExperienceBlock() {
             description: [
                 "Managed diverse team of 9 officers",
                 "Drove recruitment programs to grow club membership to 400+ members",
-                "Developed Java, Python, and JavaScript programs to automate member merit tracking & registration",
-                "Directed IT team to maintain code",
+                "Developed Java, Python, and JavaScript programs to automate member merit tracking & registration, reducing inefficiencies by 94.44%",
+                "Led IT team of 7 members to maintain and update collaborative codebase using Git and GitHub",
                 "Wrote detailed documentation and style guides to ensure code maintainability during and after my term's completion",
                 "Coached members in developing professional writing, photo editing, financial projection, communication, and presentation skills",
             ]
@@ -147,7 +144,7 @@ export function WorkExperienceBlock() {
             },
             description: [
                 "Researched at the University of Texas at Austin RobIn Interactive Intelligence Lab",
-                "Trained novel BaRiFlex robotic arm with reinforcement machine learning techniques to perform grasping tasks",
+                "Trained award-winning BaRiFlex robotic grasper with reinforcement machine learning techniques to manipulate surroundings",
                 "Programmed Bash scripts to automate recording sensor data as Robot Operating System Bags",
                 "Developed Python scripts to translate ROS bags to AI-friendly HDF5 archives",
                 "Designed Docker containers for cross-platform development using Linux-exclusive software",
