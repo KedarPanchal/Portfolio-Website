@@ -1,10 +1,10 @@
 .chatbotBlock {
     display: grid;
-    grid-template-rows: 1fr 7fr;
+    grid-template-rows: 3fr 28fr;
     gap: 1.5vmin;
 
     width: 90vw;
-    height: 50vh;
+    height: 65vh;
 
     --radius: 10px;
 }

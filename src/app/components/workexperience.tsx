@@ -78,7 +78,7 @@ export function WorkExperienceBlock() {
                 endYear: "Present",
             },
             description: [
-                "Created Apps Script programs to automate issuance of late notices for real estate loan payments creating a 97.5% efficiency gain",
+                "Created JavaScript programs to automate issuance of late notices for real estate loan payments creating a 97.5% efficiency gain",
                 "Explained and documented automation tools clearly to non-technical team members for them to utilize in their departments",
                 "Managed mortgage software and spreadsheets for tracking and logging real-estate loan financials",
             ],
@@ -127,7 +127,7 @@ export function WorkExperienceBlock() {
             },
             description: [
                 "Tutored pre-K to high school-aged students in English and math",
-                "Designed summer camp science activities for elementary-aged students",
+                "Planned summer camp science activities for elementary-aged students",
                 "Re-imaged older computers to use lightweight Linux distibutions for students to use for e-learning",
                 "Trained fellow coworkers on installing necessary educational software on re-imaged computers",
                 "Coordinated with fellow tutors to define personalized curriculum plans to maximize student success",
@@ -144,8 +144,9 @@ export function WorkExperienceBlock() {
             },
             description: [
                 "Researched at the University of Texas at Austin RobIn Interactive Intelligence Lab",
-                "Trained award-winning BaRiFlex robotic grasper with reinforcement machine learning techniques to manipulate surroundings",
-                "Programmed Bash scripts to automate recording sensor data as Robot Operating System Bags",
+                "Trained award-winning BaRiFlex robotic graspers with reinforcement machine learning techniques to manipulate surroundings",
+                "Programmed feedforward and recurrent neural networks with PyTorch",
+                "Wrote Bash scripts to automate recording sensor data as Robot Operating System (ROS) Bags",
                 "Developed Python scripts to translate ROS bags to AI-friendly HDF5 archives",
                 "Designed Docker containers for cross-platform development using Linux-exclusive software",
             ],
