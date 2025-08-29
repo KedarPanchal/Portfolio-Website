@@ -145,7 +145,7 @@ export function WorkExperienceBlock() {
             description: [
                 "Researched at the University of Texas at Austin RobIn Interactive Intelligence Lab",
                 "Trained award-winning BaRiFlex robotic graspers with reinforcement machine learning techniques to manipulate surroundings",
-                "Programmed feedforward and recurrent neural networks with PyTorch",
+                "Programmed feedforward and convolutional neural networks with PyTorch",
                 "Wrote Bash scripts to automate recording sensor data as Robot Operating System (ROS) Bags",
                 "Developed Python scripts to translate ROS bags to AI-friendly HDF5 archives",
                 "Designed Docker containers for cross-platform development using Linux-exclusive software",
