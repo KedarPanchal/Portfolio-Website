@@ -51,11 +51,11 @@ const retriever = await loader.load()
     .then(documents => splitter.splitDocuments(documents))
     .then(splits => MemoryVectorStore.fromDocuments(splits, embeddings))
     .then(vectorStore => vectorStore.asRetriever({
-        k: 10,
+        k: 15,
         searchType: "mmr",
         searchKwargs: {
             fetchK: 40,
-            lambda: 0.9,
+            lambda: 0.8,
         }
     }));
 

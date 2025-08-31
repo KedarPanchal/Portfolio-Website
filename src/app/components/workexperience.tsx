@@ -70,6 +70,20 @@ export function WorkExperienceBlock() {
     }
     const jobs: Job[] = [
         {
+            name: "Student Researcher",
+            workplace: "Aggie Collaborate - Decision Modeling for Sustainable Dairy Farms",
+            date: {
+                startMonth: "Aug",
+                startYear: 2025,
+                endYear: "Present",
+            },
+            description: [
+                "Programmed time-series AI models to analyze critical resource flows in dairy farms",
+                "Developed Long Short-Term Memory (LSTM) and Autoregressive Integrated Moving Average (ARIMA) neural networks to model complex interactions between Water-Energy-Food (WEF) nexus",
+                "Used Vensim and Stella simulation platforms to convert model insights into actionable strategies",
+            ]
+        },
+        {
             name: "Automation Developer",
             workplace: "MathNMore LLC",
             date: {
@@ -134,7 +148,7 @@ export function WorkExperienceBlock() {
             ],
         },
         {
-            name: "Summer Robotics Research Intern",
+            name: "Summer Robotics Researcher",
             workplace: "The University of Texas at Austin RobIn Lab",
             date: {
                 startMonth: "Jun",
