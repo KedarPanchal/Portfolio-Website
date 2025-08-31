@@ -71,7 +71,7 @@ export function WorkExperienceBlock() {
     const jobs: Job[] = [
         {
             name: "Student Researcher",
-            workplace: "Aggie Collaborate - Decision Modeling for Sustainable Dairy Farms",
+            workplace: "Texas A&M AgriLife Research",
             date: {
                 startMonth: "Aug",
                 startYear: 2025,
