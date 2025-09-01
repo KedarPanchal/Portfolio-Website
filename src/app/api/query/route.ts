@@ -60,38 +60,26 @@ const retriever = await loader.load()
     }));
 
 const rag_model = new ChatGroq({
-    model: "llama3-70b-8192",
-    temperature: 0.4,
-    maxTokens: 512,
-});
-
-const split_model = new ChatGroq({
     model: "llama-3.1-8b-instant",
-    temperature: 0.0,
-    maxTokens: 768,
-})
+    temperature: 0.1,
+    maxTokens: 384,
+});
 
 // Export function
 export async function POST(prompt: Request) {
     "use server"
-    const RAG_TEMPLATE = `Your task is give answers to the given questions about Kedar Panchal using ONLY directly relevant information from the provided context.
-    Answer in a friendly and approachable tone. Never include details not present in the provided context. Never give incorrect information from the context. Answer in complete sentences.
-    Use as many relevant examples from the context as possible. Never use examples that don't answer the question provided. Never answer with incomplete sentences. 
-    Always use correct grammar and answer only in paragraph form. Instead of using words like "inferred" or "based on the provided context," use definitive language.
-    If you cannot answer the question, suggest contacting me through my email or LinkedIn, and provide both pieces of contact information in your response. 
+    const RAG_TEMPLATE = `Your task is give answers to only the given questions about Kedar Panchal using ONLY directly relevant information from ONLY the provided context. Answer in a friendly and approachable tone. 
+    Answer only the question that is asked, and provide my contact information when necessary. Never include details not present in the provided context. Never give incorrect information from the context. Use as many relevant examples from the context as possible.
+    Answer in complete sentences. Never answer with incomplete sentences. Always use correct grammar and answer only in paragraph form.
+    If you cannot answer the question, suggest contacting me through my email or LinkedIn, and provide both pieces of contact information in your response.
+    Instead of using words like "inferred" or "based on the provided context," use definitive language.
+    Split your response into smaller paragraphs of at most 5-6 sentences length, grouped based on loose contextual relevance. Paragraphs should be split by exactly one single line break.
 
     Question: {question}
     Context: {context}
     Answer:`;
 
-    const SPLIT_TEMPLATE = `Your task is to split a given paragraph into smaller paragraphs of at most 5-6 sentences in length grouped based on loose contextual relevance.
-    Paragraphs should be split by exactly one line break. Answer only with the split paragraphs. Never answer with anything other than the split paragraph.
-    
-    Paragraph: {paragraph}`;
-
     const rag_prompt = ChatPromptTemplate.fromTemplate(RAG_TEMPLATE);
-    const split_prompt = ChatPromptTemplate.fromTemplate(SPLIT_TEMPLATE);
-
     const chain = RunnableSequence.from([
       {
         context: retriever.pipe((documents: Document[]) => (documents.map(document => document.pageContent)).join("\n\n")),
@@ -99,12 +87,6 @@ export async function POST(prompt: Request) {
       },
       rag_prompt,
       rag_model,
-      new StringOutputParser(),
-      {
-        paragraph: new RunnablePassthrough(),
-      },
-      split_prompt,
-      split_model,
       new StringOutputParser(),
     ]).withConfig({
         callbacks: [new ConsoleCallbackHandler()],
