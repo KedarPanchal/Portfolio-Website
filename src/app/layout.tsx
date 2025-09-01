@@ -16,6 +16,10 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Kedar Panchal | AI/ML Developer | Software Engineer | Texas A&M Computer Science Honors",
   description: "The portfolio website for Kedar Panchal, a software developer, AI/ML engineer, and Computer Science and Engineering Honors student at Texas A&M. Features a modular, agentic, RAG-powered chatbot to talk about his work experience and skills.",
+  icons: {
+    icon: "/icon.ico",
+    shortcut: "/icon.ico",
+  },
   robots: {
     index: true,
     follow: true,
