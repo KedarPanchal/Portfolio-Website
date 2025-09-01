@@ -1,5 +1,5 @@
 # Kedar Panchal's Portfolio Website  
-[Website link](https://kpanchal.vercel.app/)
+[Website link](https://kedarpanchal.dev/)
 
 Welcome to my personal portfolio! This site showcases my projects, experience, and skills as a Computer Science and Engineering student at Texas A&M. 
 
