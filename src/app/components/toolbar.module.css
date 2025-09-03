@@ -23,12 +23,8 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-
+    
     white-space: nowrap;
-}
-
-.toolbarElement {
-    color: var(--highlight);
 }
 
 .toolbarElement {
@@ -42,6 +38,10 @@
     color: var(--foreground);
     font-weight: lighter;
     text-align: center;
+}
+
+.toolbarElement:hover {
+    color: var(--highlight);
 }
 
 @media only screen and (max-width: 500px) {
