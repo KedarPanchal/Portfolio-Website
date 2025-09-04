@@ -106,8 +106,7 @@ export function WorkExperienceBlock() {
                 endYear: "Present",
             },
             description: [
-                "Project-managed and performed real-estate renovation projects on 4 properties across Texas",
-                "Renovated 4 class B and C properties to prepare for lease or sale",
+                "Project-managed and performed real-estate renovation projects on 4 class B and C properties across Texas",
                 "Carried out various installation, repair, and make-ready tasks for property maintenance and upkeep",
                 "Coordinated with team-members to verify properties met move-out standards defined in lease agreement",
             ],
